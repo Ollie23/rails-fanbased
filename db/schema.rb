@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170404151049) do
+
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170404151049) do
     t.index ["team_id"], name: "index_competitions_on_team_id", using: :btree
   end
 
+
   create_table "fans", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "team_id"
@@ -31,6 +35,15 @@ ActiveRecord::Schema.define(version: 20170404151049) do
     t.datetime "updated_at", null: false
     t.index ["team_id"], name: "index_fans_on_team_id", using: :btree
     t.index ["user_id"], name: "index_fans_on_user_id", using: :btree
+
+  create_table "events", force: :cascade do |t|
+    t.integer  "venue_id"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_events_on_game_id", using: :btree
+    t.index ["venue_id"], name: "index_events_on_venue_id", using: :btree
+
   end
 
   create_table "games", force: :cascade do |t|
@@ -103,8 +116,13 @@ ActiveRecord::Schema.define(version: 20170404151049) do
 
   add_foreign_key "competitions", "leagues"
   add_foreign_key "competitions", "teams"
+
   add_foreign_key "fans", "teams"
   add_foreign_key "fans", "users"
+
+  add_foreign_key "events", "games"
+  add_foreign_key "events", "venues"
+
   add_foreign_key "games", "leagues"
   add_foreign_key "profiles", "users"
 end
