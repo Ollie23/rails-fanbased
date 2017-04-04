@@ -19,7 +19,7 @@ gem 'autoprefixer-rails'
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
-  
+
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
@@ -27,4 +27,7 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :development do
+  gem "localtower"
+end
 
