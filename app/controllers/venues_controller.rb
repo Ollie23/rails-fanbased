@@ -27,10 +27,10 @@ class VenuesController < ApplicationController
       #   marker.lat bar.latitude
       #   marker.lng bar.longitude
         # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
-      end
   end
 
-   def edit
+
+  def edit
     @venue = venue.find(params[:id])
   end
 
