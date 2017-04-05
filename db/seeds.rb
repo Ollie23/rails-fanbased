@@ -1,5 +1,12 @@
+Competition.destroy_all
+League.destroy_all
+Team.destroy_all
+
+
 
 league = League.create(name: "Premier League", country: "England")
+liga = League.create(name: "La Liga ", country: "Spain")
+ligue = League.create(name: "Ligue 1", country: "France")
 
 
 team = Team.create(
@@ -84,3 +91,86 @@ team19 = Team.create(
 Competition.create(team: team19, league: league)
 
 
+
+
+team20 = Team.create(
+  name: "Real Madrid" , location: "Madrid"
+)
+Competition.create(team: team20, league: liga)
+team21 = Team.create(
+  name: "Barcelona" , location: "Barcelona"
+)
+Competition.create(team: team21, league: liga)
+team22 = Team.create(
+  name: "Atletico Madrid" , location: "Madrid"
+)
+Competition.create(team: team22, league: liga)
+team23 = Team.create(
+  name: "Sevilla" , location: "Sevilla"
+)
+Competition.create(team: team23, league: liga)
+team24 = Team.create(
+  name: "Espanyol" , location: "Barcelona"
+)
+Competition.create(team: team24, league: liga)
+team25 = Team.create(
+  name: "Real Sociedad" , location: "San Sebastián"
+)
+Competition.create(team: team25, league: liga)
+team26 = Team.create(
+  name: "Valencia" , location: "Valencia"
+)
+Competition.create(team: team26, league: liga)
+team27 = Team.create(
+  name: "Getafe CF" , location: "Getafe"
+)
+Competition.create(team: team27, league: liga)
+team28 = Team.create(
+  name: "Athletic Bilbao" , location: "Bilbao"
+)
+Competition.create(team: team28, league: liga)
+team29 = Team.create(
+  name: "Villareal" , location: "Villareal"
+)
+
+
+team30 = Team.create(
+  name: "PSG" , location: "Paris"
+)
+Competition.create(team: team30, league: ligue)
+team31 = Team.create(
+  name: "Olympique Marseille" , location: "Marseilla"
+)
+Competition.create(team: team31, league: ligue)
+team32 = Team.create(
+  name: "Monaco" , location: "Monaco"
+)
+Competition.create(team: team32, league: ligue)
+team33 = Team.create(
+  name: "Olympique Lyon" , location: "Lyon"
+)
+Competition.create(team: team33, league: ligue)
+team34 = Team.create(
+  name: "AS Saint-Étienne" , location: "Saint-Étienne"
+)
+Competition.create(team: team34, league: ligue)
+team35 = Team.create(
+  name: "Real Sociedad" , location: "San Sebastián"
+)
+Competition.create(team: team35, league: ligue)
+team36 = Team.create(
+  name: "Bordeaux" , location: "Bordeaux"
+)
+Competition.create(team: team36, league: ligue)
+team37 = Team.create(
+  name: "Toulouse" , location: "Toulouse"
+)
+Competition.create(team: team37, league: ligue)
+team38 = Team.create(
+  name: "Stade Rennais F.C." , location: "Rennes"
+)
+Competition.create(team: team38, league: ligue)
+team39 = Team.create(
+  name: "OGC Nice" , location: "Nice"
+)
+Competition.create(team: team39, league: ligue)
