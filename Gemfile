@@ -16,7 +16,12 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+
+# gem "open-uri"
+gem "nokogiri"
+
 gem 'country_select'
+
 
 
 
