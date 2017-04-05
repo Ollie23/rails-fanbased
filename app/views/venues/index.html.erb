@@ -1,0 +1,15 @@
+<div class = "text-center">
+  <h1>Venues</h1>
+  <% @venues.each do |venue| %>
+  <%= venue.name %>
+            <%= venue.address%>
+            <%= venue.description%>
+            <%= venue.rating%>
+            <%= venue.close%>
+            <%= venue.screens%>
+            <%= venue.internet%>
+            <%= venue.food%>
+            <%= venue.price_range%>
+  <%end%>
+</div>
+
