@@ -1,7 +1,7 @@
 class VenuesController < ApplicationController
   def index
     # @bars = current_user.bar
-    @venue = Venue.all
+    @venues = Venue.all
   end
 
   def new
@@ -11,7 +11,7 @@ class VenuesController < ApplicationController
   def create
     @venue = Venue.new(venue_params)
     if @venue.save
-      redirect_to venue_path
+      redirect_to venue_path(@venue.id)
     else
       render :new
     end
@@ -19,7 +19,7 @@ class VenuesController < ApplicationController
 
   def show
     # if current_user.owns_bar?(Bar.find(params[:id]))
-      @venue = Venue.find(params[:id])
+    @venue = Venue.find(params[:id])
       # @venue_coordinates = { lat: @venue.latitude, lng: @venue.longitude }
       # @venue = Venue.where.not(latitude: nil, longitude: nil)
 
@@ -27,30 +27,30 @@ class VenuesController < ApplicationController
       #   marker.lat bar.latitude
       #   marker.lng bar.longitude
         # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
-  end
 
+      end
 
-  def edit
-    @venue = venue.find(params[:id])
-  end
+      def edit
+        @venue = Venue.find(params[:id])
+      end
 
-  def update
-    @venue = Venue.find(params[:id])
-    @venue.update(venue_params)
-    redirect_to venues_path(@venue)
-  end
+      def update
+        @venue = Venue.find(params[:id])
+        @venue.update(venue_params)
+        redirect_to venues_path(@venue)
+      end
 
-  def destroy
-    @venue = Venue.find(params[:id]).destroy
-    redirect_to venue_path
-  end
+      def destroy
+        @venue = Venue.find(params[:id]).destroy
+        redirect_to venue_path
+      end
 
-  private
+      private
 
-  def venue_params
-    params.require(:venue).permit(:name, :address, :description, :rating, :close, :screens, :internet, :food, :price_range)
-  end
-end
+      def venue_params
+        params.require(:venue).permit(:name, :address, :description, :rating, :close, :screens, :internet, :food, :price_range)
+      end
+    end
 
 
 
