@@ -1,0 +1,12 @@
+<h1 class="text-center">Edit Profile</h1>
+ <div class="container">
+    <div class="row">
+      <div class="col-xs-4 col-xs-offset-4">
+        <%= simple_form_for @league do |f| %>
+            <%= f.input :name %>
+            <%= f.input :country %>
+            <%= f.submit %>
+        <% end %>
+    </div>
+  </div>
+</div>
