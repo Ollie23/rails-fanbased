@@ -1,0 +1,12 @@
+<%= simple_form_for @venue do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address%>
+  <%= f.input :description%>
+  <%= f.input :rating%>
+  <%= f.input :close%>
+  <%= f.input :screens%>
+  <%= f.input :internet%>
+  <%= f.input :food%>
+  <%= f.input :price_range%>
+  <%= f.submit "Update", class: "btn btn-primary" %>
+<% end %>
