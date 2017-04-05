@@ -6,12 +6,19 @@ class LeaguesController < ApplicationController
   def show
     @league = League.find(params[:id])
   end
+  def new
+    @league = League.new
+  end
 
   def create
     @league = League.new(league_params)
     @league.save
 
     redirect_to root_path
+  end
+
+  def edit
+    @league = League.find(params[:id])
   end
 
   def update

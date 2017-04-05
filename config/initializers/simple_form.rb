@@ -141,6 +141,7 @@ SimpleForm.setup do |config|
 
   # Default priority for time_zone inputs.
   # config.time_zone_priority = nil
+  # config.input_mappings = { /country/ => :string }
 
   # Default priority for country inputs.
   # config.country_priority = nil
