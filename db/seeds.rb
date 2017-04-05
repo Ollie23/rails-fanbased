@@ -3,7 +3,6 @@ League.destroy_all
 Team.destroy_all
 
 
-
 league = League.create(name: "Premier League", country: "England")
 liga = League.create(name: "La Liga ", country: "Spain")
 ligue = League.create(name: "Ligue 1", country: "France")

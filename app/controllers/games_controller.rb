@@ -7,11 +7,16 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
   end
 
+  def new
+    @game = Game.new
+  end
+
   def create
     @game = Game.new(game_params)
-    @game.save
 
+    if @game.save
     redirect_to root_path
+    end
   end
 
   def update
@@ -28,6 +33,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:name, :country)
+    params.require(:game).permit(:date_time, :location, :gameweek, :home_team_id, :away_team_id, :league_id)
   end
 end

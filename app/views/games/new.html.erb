@@ -1,0 +1,11 @@
+<%= simple_form_for @game do, html: { autocomplete: 'on' } |f| %>
+  <%= f.input :date_time %>
+  <%= f.input :location%>
+  <%= f.input :gameweek %>
+  <%= f.input :home_team_id, collection: Team.all %>
+  <%= f.input :away_team_id, collection: Team.all %>
+  <%= f.input :league_id, collection: League.all %>
+
+  <%= f.submit "Create", class: "btn btn-primary" %>
+<% end %>
+
