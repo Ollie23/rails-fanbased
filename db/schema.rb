@@ -10,17 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170404153622) do
-=======
-
-ActiveRecord::Schema.define(version: 20170404151049) do
-
-
->>>>>>> bf82286e5f50aadf59f1d174222287db0899c5d3
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attendees", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_attendees_on_event_id", using: :btree
+    t.index ["user_id"], name: "index_attendees_on_user_id", using: :btree
+  end
 
   create_table "competitions", force: :cascade do |t|
     t.integer  "team_id"
@@ -31,6 +33,14 @@ ActiveRecord::Schema.define(version: 20170404151049) do
     t.index ["team_id"], name: "index_competitions_on_team_id", using: :btree
   end
 
+  create_table "events", force: :cascade do |t|
+    t.integer  "venue_id"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_events_on_game_id", using: :btree
+    t.index ["venue_id"], name: "index_events_on_venue_id", using: :btree
+  end
 
   create_table "fans", force: :cascade do |t|
     t.integer  "user_id"
@@ -39,15 +49,6 @@ ActiveRecord::Schema.define(version: 20170404151049) do
     t.datetime "updated_at", null: false
     t.index ["team_id"], name: "index_fans_on_team_id", using: :btree
     t.index ["user_id"], name: "index_fans_on_user_id", using: :btree
-
-  create_table "events", force: :cascade do |t|
-    t.integer  "venue_id"
-    t.integer  "game_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_events_on_game_id", using: :btree
-    t.index ["venue_id"], name: "index_events_on_venue_id", using: :btree
-
   end
 
   create_table "games", force: :cascade do |t|
@@ -122,15 +123,14 @@ ActiveRecord::Schema.define(version: 20170404151049) do
     t.datetime "updated_at",  null: false
   end
 
+  add_foreign_key "attendees", "events"
+  add_foreign_key "attendees", "users"
   add_foreign_key "competitions", "leagues"
   add_foreign_key "competitions", "teams"
-
-  add_foreign_key "fans", "teams"
-  add_foreign_key "fans", "users"
-
   add_foreign_key "events", "games"
   add_foreign_key "events", "venues"
-
+  add_foreign_key "fans", "teams"
+  add_foreign_key "fans", "users"
   add_foreign_key "games", "leagues"
   add_foreign_key "games", "teams", column: "away_team_id"
   add_foreign_key "games", "teams", column: "home_team_id"
