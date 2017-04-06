@@ -94,7 +94,6 @@
 
 
 
-
 # team20 = Team.create(
 #   name: "Real Madrid" , location: "Madrid"
 # )
@@ -134,7 +133,6 @@
 # team29 = Team.create(
 #   name: "Villareal" , location: "Villareal"
 # )
-
 
 # team30 = Team.create(
 #   name: "PSG" , location: "Paris"
