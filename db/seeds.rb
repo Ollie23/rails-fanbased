@@ -2,9 +2,11 @@
 # League.destroy_all
 # Team.destroy_all
 
+# premier_league = League.create(name: "Premier League", country: "England")
 
 
-league = League.create(name: "Premier League", country: "England")
+
+# league = League.create(name: "Premier League", country: "England")
 # liga = League.create(name: "La Liga ", country: "Spain")
 # ligue = League.create(name: "Ligue 1", country: "France")
 
@@ -92,7 +94,6 @@ league = League.create(name: "Premier League", country: "England")
 
 
 
-
 # team20 = Team.create(
 #   name: "Real Madrid" , location: "Madrid"
 # )
@@ -132,7 +133,6 @@ league = League.create(name: "Premier League", country: "England")
 # team29 = Team.create(
 #   name: "Villareal" , location: "Villareal"
 # )
-
 
 # team30 = Team.create(
 #   name: "PSG" , location: "Paris"
