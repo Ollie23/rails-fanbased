@@ -7,6 +7,9 @@ class Team < ApplicationRecord
   validates :name, presence: true
   validates :location, presence: true
 
+  def is_supporter?(team)
+    self.users.pluck(:id).include?(team.id) ? true : false
+
   has_many :games
 
   def games
@@ -15,5 +18,6 @@ class Team < ApplicationRecord
 
   def self.matches(team_name)
     all_games = Game.where("home_team_id = ? OR away_team_id = ?", "#{team_name.id}", "#{team_name.id}")
+
   end
 end

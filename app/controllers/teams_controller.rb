@@ -1,10 +1,19 @@
 class TeamsController < ApplicationController
+  def index
+    @teams = Team.all
+    @fan = Fan.new
+  end
   def show
     @team = Team.find(params[:id])
   end
 
   def new
     @team = Team.new
+  end
+
+  def save_teams
+    params[:team_ids] #= "team_ids"=>["11", "13", "14"]
+
   end
 
   def create
@@ -24,6 +33,12 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
     @team.update(team_params)
     redirect_to teams_path(@team)
+  end
+
+  def fan
+    @team = Team.find(params[:id])
+    current_user.team << @team
+    redirect_to root_path
   end
 
   def destroy

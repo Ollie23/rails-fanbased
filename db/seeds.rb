@@ -5,11 +5,9 @@
 # premier_league = League.create(name: "Premier League", country: "England")
 
 
-
 # league = League.create(name: "Premier League", country: "England")
 # liga = League.create(name: "La Liga ", country: "Spain")
 # ligue = League.create(name: "Ligue 1", country: "France")
-
 
 # team = Team.create(
 #   name: "Tottenham Hotspur" , location: "London"
