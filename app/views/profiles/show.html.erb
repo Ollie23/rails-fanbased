@@ -1,3 +1,9 @@
 <h3><%= @profile.first_name.capitalize + " " + @profile.last_name.capitalize %></h3>
 <p><%= @profile.username %></p>
 <p><%= @profile.age %></p>
+<ul>
+ <% @profile.user.team.each do |team| %>
+  <li> <%= team.name %> </li>
+<%end%>
+
+</ul>

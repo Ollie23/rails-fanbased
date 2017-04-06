@@ -6,4 +6,8 @@ class Team < ApplicationRecord
 
   validates :name, presence: true
   validates :location, presence: true
+
+  def is_supporter?(team)
+    self.users.pluck(:id).include?(team.id) ? true : false
+  end
 end
