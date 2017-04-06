@@ -6,4 +6,14 @@ class Team < ApplicationRecord
 
   validates :name, presence: true
   validates :location, presence: true
+
+  has_many :games
+
+  def games
+    Game.where("home_team_id = ? OR away_team_id = ?", "#{self.id}", "#{self.id}")
+  end
+
+  def self.matches(team_name)
+    all_games = Game.where("home_team_id = ? OR away_team_id = ?", "#{team_name.id}", "#{team_name.id}")
+  end
 end
