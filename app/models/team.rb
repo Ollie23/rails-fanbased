@@ -9,5 +9,15 @@ class Team < ApplicationRecord
 
   def is_supporter?(team)
     self.users.pluck(:id).include?(team.id) ? true : false
+
+  has_many :games
+
+  def games
+    Game.where("home_team_id = ? OR away_team_id = ?", "#{self.id}", "#{self.id}")
+  end
+
+  def self.matches(team_name)
+    all_games = Game.where("home_team_id = ? OR away_team_id = ?", "#{team_name.id}", "#{team_name.id}")
+
   end
 end
