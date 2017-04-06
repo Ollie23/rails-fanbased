@@ -18,7 +18,7 @@ namespace :scrape_games do
         team_01 = Team.where("name LIKE ?", "%#{home_team}%")
         team_02 = Team.where("name LIKE ?", "%#{away_team}%")
         unless team_01.empty? or team_02.empty?
-          Game.create!(date_time: new_date, league_id: 4, home_team_id: team_01.first.id, away_team_id: team_02.first.id)
+          Game.create!(date_time: new_date, league_id: 1, home_team_id: team_01.first.id, away_team_id: team_02.first.id)
         end
       end
       end
