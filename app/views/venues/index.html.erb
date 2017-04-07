@@ -2,27 +2,31 @@
 
 <div class="container">
   <div class="row">
-  <h1>Venues</h1>
+    <h1>Venues</h1>
 
-  <% @venues.each do |venue| %>
+    <% @venues.each do |venue| %>
     <div class="col-xs-12 col-sm-6 col-md-3">
       <!-- div class="card" -->
       <div class = "text-center">
-            <h3><%=venue.name%></h3>
-            <%=venue.address%>
-            <%= venue.description%>
-            <%= venue.rating%>
-            <%= venue.close%>
-            <%= venue.screens%>
-            <%= venue.internet%>
-            <%= venue.food%>
-            <%= venue.price_range%>
+        <h3><%=venue.name%></h3>
+        <%=venue.address%>
+        <%= venue.description%>
+        <%= venue.rating%>
+        <%= venue.close%>
+        <%= venue.screens%>
+        <%= venue.internet%>
+        <%= venue.food%>
+        <%= venue.price_range%>
+        <%= venue.games.each do | game | %>
 
       </div>
     </div>
-  <%end%>
+    <%end%>
+    <%end%>
 
   </div>
 </div>
-</div>
+
+
+
 

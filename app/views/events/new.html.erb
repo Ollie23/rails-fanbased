@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-9 col-xs-offset-3">
+
+    <h1>
+      current games
+    </h1>
+    <% @venue.events.each do |event| %>
+      <li>
+        <%= event.game.home_team.name %> vs <%= event.game.away_team.name %>
+      </li>
+    <% end %>
+
+      <h1>
+        What game do you want to create an event for ?
+      </h1>
+
+      <% @leagues.each do |league| %>
+        <h4>
+          <%= league.name %>
+        </h4>
+        <p>
+          <% league.games.each do |game| %>
+            <%= link_to events_path(venue_id: @venue.id, game_id: game.id) do %>
+              <li>
+                <%= game.home_team.name %> vs <%= game.away_team.name %> on <%= game.date_time %>
+              </li>
+            <% end %>
+          <% end %>
+        </p>
+
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

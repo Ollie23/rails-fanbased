@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
   get "teams/:id/fans", to: "fans#create"
+  get "events", to: "events#create"
 
   devise_for :users, :controllers => { registrations: "registrations"}
   root to: 'pages#home'
@@ -18,7 +19,11 @@ Rails.application.routes.draw do
 
   resources :leagues
 
-  resources :venues
+  resources :events, only: [:create]
+
+  resources :venues do
+    resources :events
+  end
 
 
 end
