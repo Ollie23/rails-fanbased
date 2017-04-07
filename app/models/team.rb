@@ -10,7 +10,9 @@ class Team < ApplicationRecord
   def is_supporter?(team)
     self.users.pluck(:id).include?(team.id) ? true : false
   end
-    has_many :games
+
+  has_many :games
+
 
 
   def games
