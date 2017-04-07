@@ -1,2 +1,9 @@
-<%= @game.home_team %>
-<%= @game.away_team %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <%= @game.home_team.name + " " + "V" + " " + @game.away_team.name %>
+      <h1>Bars related to the game</h1>
+    </div>
+  </div>
+</div>
+
