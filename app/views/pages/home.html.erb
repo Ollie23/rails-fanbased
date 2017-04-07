@@ -8,6 +8,7 @@
 <div class="text-center">
 <% if current_user %>
   <ul style="list-style: none;">
+    <h3>Your Teams</h3>
     <% current_user.team.each do |team| %>
             <%= link_to team_path(team) do %>
               <h3><li> <%= team.name %> </li></h3>
