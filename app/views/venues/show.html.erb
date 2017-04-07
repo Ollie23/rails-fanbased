@@ -35,10 +35,10 @@
             <i class="fa fa-wifi" aria-hidden="true"></i>
             <% end %></li>
           <li>
-          <% if current_user && @venue.owns_venue?(current_user) %>
-          <%= link_to 'Edit venue', edit_bar_path(@venue), class: 'btn btn-primary'%>
+          <% if current_user.admin? %>
+          <%= link_to 'Edit venue', edit_venue_path(@venue), class: 'btn btn-primary'%>
           <%= link_to "Delete Bar", venue_path(@venue), method: :delete, class: 'btn btn-primary'%>
-          <%= link_to "Add Events", new_venue_event_path(@veneu), class: "btn btn-primary" %>
+          <%= link_to "Add Events", new_venue_event_path(@venue), class: "btn btn-primary" %>
           <% end %>
           </li>
           </ul>
@@ -47,3 +47,10 @@
     </div>
   </div>
 </div>
+
+<% @venue.events.each do |event| %>
+  <li>
+    <%= event.game.home_team.name %> vs <%= event.game.away_team.name %>
+  </li>
+<% end %>
+

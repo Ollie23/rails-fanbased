@@ -5,8 +5,8 @@ class Venue < ApplicationRecord
   validates :address, presence: true
 
 
-  def owns_venue?(current_user)
-    self.user == current_user
+  def owns_venue?(logged_user)
+    current_user == logged_user
   end
 
 end
