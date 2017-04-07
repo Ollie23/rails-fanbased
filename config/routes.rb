@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  ActiveAdmin.routes(self)
   get "teams/:id/fans", to: "fans#create"
 
   devise_for :users, :controllers => { registrations: "registrations"}
