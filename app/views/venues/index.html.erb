@@ -8,7 +8,11 @@
     <div class="col-xs-12 col-sm-6 col-md-3">
       <!-- div class="card" -->
       <div class = "text-center">
-        <h3><%=venue.name%></h3>
+        <%= link_to venue_path(venue) do %>
+            <div>
+              <h3><%=venue.name%></h3>
+            </div>
+            <% end %>
         <%=venue.address%>
         <%= venue.description%>
         <%= venue.rating%>
@@ -19,11 +23,13 @@
         <%= venue.price_range%>
       </div>
     </div>
-    <%end%>
-
+    <% end %>
   </div>
 </div>
 
+<% if current_user.admin? %>
+          <%= link_to 'New Venue', new_venue_path, class: 'btn btn-primary'%>
+<% end %>
 
 
 
