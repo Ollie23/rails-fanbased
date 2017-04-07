@@ -15,6 +15,11 @@ class EventsController < ApplicationController
   def show
   end
 
+  def attend
+    @event = Event.find(params[:id])
+    current_user.events << @event
+    redirect_to @event
+  end
 
   private
 

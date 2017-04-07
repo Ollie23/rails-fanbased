@@ -1,8 +1,12 @@
+<h1 class="text-center"> <%= @game.home_team.name + " " + "V" + " " + @game.away_team.name %> </h1>
 <div class="container">
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
-      <%= @game.home_team.name + " " + "V" + " " + @game.away_team.name %>
-      <h1>Bars related to the game</h1>
+      <% @game.venues.each do |bar|%>
+        <%=link_to venue_path(bar) do%>
+          <%= bar.name %>
+        <%end%>
+      <% end %>
     </div>
   </div>
 </div>

@@ -7,7 +7,12 @@ class User < ApplicationRecord
   has_many :fans
   has_many :team, through: :fans
 
+  has_many :attendees
+  has_many :events, through: :attendees
+
+
   def owns_profile?(profile)
     profile.id == self.profile.id
   end
+
 end
