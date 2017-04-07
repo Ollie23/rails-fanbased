@@ -4,21 +4,20 @@
   <div class="row">
     <h1>Venues</h1>
 
+
     <% @venues.each do |venue| %>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <!-- div class="card" -->
-      <div class = "text-center">
+  <div class="col-xs-12 col-sm-6 col-md-3">
         <%= link_to venue_path(venue) do %>
-        <div>
           <ul>
           <h3><%=venue.name%></h3>
           <%=venue.address%>
           <br>
           Closing time: <%= venue.close.strftime('%H:%M') %>
-          <% end %>
+
       </ul>
-    </div>
     <% end %>
+  </div>
+  <% end %>
   </div>
 </div>
 </div>
