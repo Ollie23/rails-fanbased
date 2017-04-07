@@ -1,9 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
-      <h3><%= @profile.first_name.capitalize + " " + @profile.last_name.capitalize %></h3>
-      <p><%= @profile.username %></p>
-      <p><%= @profile.age %></p>
+      <div class="text-center">
+        <h3><%= @profile.first_name.capitalize + " " + @profile.last_name.capitalize %></h3>
+        <p><%= @profile.username %></p>
+        <p><%= @profile.age %></p>
+      </div>
+      <div class="col-xs-6 padded">
       <ul>
         <h4>Your teams</h4>
         <% @profile.user.team.each do |team| %>
@@ -12,12 +15,15 @@
           <%end%>
         <%end%>
       </ul>
-      <ul>
-        <h4>Your Events</h4>
-        <% @profile.user.events.each do |event| %>
-             <%= event.game.home_team.name + " " + "V" + " " + event.game.away_team.name %>
-        <%end%>
-      </ul>
+      </div>
+      <div class="col-xs-6 padded">
+        <ul>
+          <h4>Your Events</h4>
+          <% @profile.user.events.each do |event| %>
+               <%= event.game.home_team.name + " " + "V" + " " + event.game.away_team.name %>
+          <%end%>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
