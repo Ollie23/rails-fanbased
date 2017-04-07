@@ -11,13 +11,11 @@
     <%= link_to "Home", root_path , class: "navbar-wagon-item navbar-wagon-link" %>
 
 
-    <%= link_to games_path do %>
-      <p class="navbar-wagon-item navbar-wagon-link">Calendar</p>
-    <% end %>
+    <%= link_to "Calendar", games_path , class: "navbar-wagon-item navbar-wagon-link"%>
 
-    <%= link_to venues_path do %>
-      <p class="navbar-wagon-item navbar-wagon-link">Venues</p>
-    <% end %>
+
+    <%= link_to "Venues", venues_path , class: "navbar-wagon-item navbar-wagon-link" %>
+
     <% if user_signed_in? %>
       <%= link_to "Profile", profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link"%>
     <% end %>
@@ -75,7 +73,7 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+
   </div>
 
   <!-- Dropdown list appearing on mobile only -->

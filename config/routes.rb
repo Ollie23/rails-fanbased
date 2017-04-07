@@ -21,9 +21,14 @@ Rails.application.routes.draw do
 
   resources :events, only: [:create]
 
+  resources :events do
+   resources :attendees, only: [:create]
+  end
+
   resources :venues do
     resources :events
   end
+
 
 
 end

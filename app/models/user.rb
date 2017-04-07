@@ -6,4 +6,6 @@ class User < ApplicationRecord
   has_one :profile
   has_many :fans
   has_many :team, through: :fans
+  has_many :attendees
+  has_many :events, through: :attendees
 end

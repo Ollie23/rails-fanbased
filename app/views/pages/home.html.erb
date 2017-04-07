@@ -1,7 +1,0 @@
-<ul>
-  <% current_user.team.each do |team| %>
-    <%team.games.each do |game|%>
-      <li> <%=game.home_team.name + " " + "V" + " " + game.away_team.name%> </li>
-    <%end%>
-  <%end%>
-</ul>
