@@ -1,9 +1,16 @@
-<h3><%= @profile.first_name.capitalize + " " + @profile.last_name.capitalize %></h3>
-<p><%= @profile.username %></p>
-<p><%= @profile.age %></p>
-<ul>
- <% @profile.user.team.each do |team| %>
-  <li> <%= team.name %> </li>
-<%end%>
-
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <h3><%= @profile.first_name.capitalize + " " + @profile.last_name.capitalize %></h3>
+      <p><%= @profile.username %></p>
+      <p><%= @profile.age %></p>
+      <ul>
+        <% @profile.user.team.each do |team| %>
+          <%= link_to team_path(team) do %>
+            <li> <%= team.name %> </li>
+          <%end%>
+        <%end%>
+      </ul>
+    </div>
+  </div>
+</div>

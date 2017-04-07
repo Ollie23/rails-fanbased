@@ -1,11 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+      <h1><%= @team.name %></h1>
+      <% @team.games.each do |game| %>
+      <h2><%= game.date_time %></h2>
+        <%= link_to game_path(game) do %>
+          <li><%= game.home_team.name + " " + "V" + " " + game.away_team.name %></li>
+        <%end%>
+      <%end%>
+    </div>
+  </div>
+</div>
 
-<%= @team.name %>
-<h1>Teams#show</h1>
-<p>Find me in app/views/teams/show.html.erb</p>
-<ul>
-<% @team.games.each do |game| %>
-<li> <%= game.home_team.name %> VS
-<%= game.away_team.name %>
-<%= game.date_time %>
-<% end %> </li>
-</ul>

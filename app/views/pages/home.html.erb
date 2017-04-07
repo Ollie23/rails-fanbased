@@ -1,2 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<ul>
+  <% current_user.team.each do |team| %>
+    <%team.games.each do |game|%>
+      <li> <%=game.home_team.name + " " + "V" + " " + game.away_team.name%> </li>
+    <%end%>
+  <%end%>
+</ul>

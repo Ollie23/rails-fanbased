@@ -7,6 +7,23 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
+
+    <%= link_to "Home", root_path , class: "navbar-wagon-item navbar-wagon-link" %>
+
+
+    <%= link_to games_path do %>
+      <p class="navbar-wagon-item navbar-wagon-link">Calendar</p>
+    <% end %>
+
+    <%= link_to venues_path do %>
+      <p class="navbar-wagon-item navbar-wagon-link">Venues</p>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to "Profile", profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link"%>
+    <% end %>
+
+
+
     <!-- Search form -->
     <form action="" class="navbar-wagon-search">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
