@@ -7,9 +7,9 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-
-    <%= link_to "Home", root_path , class: "navbar-wagon-item navbar-wagon-link" %>
-
+    <%= link_to root_path do %>
+      <p class="navbar-wagon-item navbar-wagon-link">Home</p>
+    <% end %>
 
     <%= link_to games_path do %>
       <p class="navbar-wagon-item navbar-wagon-link">Calendar</p>
@@ -18,30 +18,30 @@
     <%= link_to venues_path do %>
       <p class="navbar-wagon-item navbar-wagon-link">Venues</p>
     <% end %>
+
     <% if user_signed_in? %>
-      <%= link_to "Profile", profile_path(current_user.profile), class: "navbar-wagon-item navbar-wagon-link"%>
+      <%= link_to profile_path(current_user.profile) do %>
+        <p class="navbar-wagon-item navbar-wagon-link">Profile</p>
+      <% end %>
     <% end %>
 
 
 
+
+
     <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
+    <!-- <form action="" class="navbar-wagon-search">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
     </form>
-
+ -->
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
       <!-- Notification -->
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-        <div class="badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
-        </div>
-      <% end %>
+
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
@@ -75,7 +75,7 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
