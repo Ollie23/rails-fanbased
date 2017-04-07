@@ -1,23 +1,11 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
 
-      <h1>Premier League</h1>
-      <% @games.each do |game| %>
-        <% if game.league_id == 1 %>
-          <p> <%=game.home_team.name + " " + "V" + " " + game.away_team.name%> </p>
-        <%end%>
-      <%end%>
+<ul>
+<% @games.each do |game| %>
+<li>
+<%= game.home_team.name + " " + "V" + " " + game.away_team.name%>
+<%= game.date_time  %>
+</li>
+<% end %>
+</ul>
 
-
-      <h1>La Liga</h1>
-      <% @games.each do |game| %>
-        <% if game.league_id == 2 %>
-          <p> <%=game.home_team.name + " " + "V" + " " + game.away_team.name%> </p>
-        <%end%>
-      <%end%>
-
-    </div>
-  </div>
-</div>
 
