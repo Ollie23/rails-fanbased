@@ -1,0 +1,20 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,20,80,0.6) 0%, rgba(0,10,100,0.3) 50%), url(https://pixabay.com/get/e036b0062ff11c22d9584518a33219c8b66ae3d110b014479cf6c67e/stadium-931975_1920.jpg);">
+  <div class="banner-content">
+    <h1>FanBased</h1>
+    <p>Meet likeminded fans wherever you are</p>
+  </div>
+</div>
+
+<div class="text-center">
+<% if current_user %>
+  <ul style="list-style: none;">
+    <% current_user.team.each do |team| %>
+            <%= link_to team_path(team) do %>
+              <h3><li> <%= team.name %> </li></h3>
+            <% end %>
+          <% end %>
+  </ul>
+  <% else %>
+  <h2>Sign up to see your teams</h2>
+<% end %>
+</div>

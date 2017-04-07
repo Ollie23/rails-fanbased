@@ -1,7 +1,9 @@
 <ul>
 <% @games.each do |game| %>
 <li>
-<%=game.home_team.name + " " + "V" + " " + game.away_team.name%>
+<%= game.home_team.name + " " + "V" + " " + game.away_team.name%>
+<%= game.date_time  %>
 </li>
-<%end%>
+<% end %>
 </ul>
+
