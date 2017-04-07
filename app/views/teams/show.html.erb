@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
-      <h1><%= @team.name %></h1>
+    <div class="col-xs-4 col-xs-offset-4 text-center">
+      <h2><%= @team.name %></h2>
       <% @team.games.each do |game| %>
-      <h2><%= game.date_time %></h2>
+      <p><%= game.league.name %> <%= game.date_time.strftime('%m/%d/%Y') %></p>
         <%= link_to game_path(game) do %>
-          <li><%= game.home_team.name + " " + "V" + " " + game.away_team.name %></li>
-        <%end%>
-      <%end%>
+          <li><%= game.home_team.name + " " + "VS" + " " + game.away_team.name %></li>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
