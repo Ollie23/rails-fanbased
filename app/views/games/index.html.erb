@@ -1,22 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
-
-      <h1>Premier League</h1>
-      <% @games.each do |game| %>
-        <% if game.league_id == 1 %>
-          <p> <%=game.home_team.name + " " + "V" + " " + game.away_team.name%> </p>
-        <%end%>
-      <%end%>
-
-
-      <h1>La Liga</h1>
-      <% @games.each do |game| %>
-        <% if game.league_id == 2 %>
-          <p> <%=game.home_team.name + " " + "V" + " " + game.away_team.name%> </p>
-        <%end%>
-      <%end%>
-
+      <ul>
+      <h1>This week</h1>
+        <%= will_paginate @games %>
+           <% @games.each do |game| %>
+              <p> <%= game.home_team.name +  " vs " + game.away_team.name %> </p>
+              <p> <%=game.date_time%></p>
+          <%end%>
+        <%= will_paginate @games %>
+      </ul>
     </div>
   </div>
 </div>
