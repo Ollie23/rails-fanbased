@@ -9,4 +9,6 @@ class Venue < ApplicationRecord
     current_user == logged_user
   end
 
+  mount_uploader :photo, PhotoUploader
+
 end
