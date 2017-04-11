@@ -1,27 +1,39 @@
 
 
+<h1>Venues</h1>
+
 <div class="container">
   <div class="row">
-    <h1>Venues</h1>
+    <div class="col-xs-12 col-sm-6 col-md-3">
 
+      <% @venues.each do |venue| %>
+      <%= link_to venue_path(venue) do %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://s-media-cache-ak0.pinimg.com/originals/07/70/9f/07709fad319dc103dfb98cd781101a41.jpg');">
+            <h3>
+            <%=venue.name%>
+            </h3>
+          <p>
+            <%=venue.address%>
+            <br>
+            Closing time: <%= venue.close.strftime('%H:%M') %>
+          </p>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
 
-    <% @venues.each do |venue| %>
-  <div class="col-xs-12 col-sm-6 col-md-3">
-        <%= link_to venue_path(venue) do %>
-          <ul>
-          <h3><%=venue.name%></h3>
-          <%=venue.address%>
-          <br>
-          Closing time: <%= venue.close.strftime('%H:%M') %>
-
-      </ul>
-    <% end %>
   </div>
-  <% end %>
-  </div>
-</div>
+
 </div>
 
+
+<div>
+
+<% if current_user && current_user.admin? %>
+  <%= link_to 'New Venue', new_venue_path, class: 'btn btn-primary'%>
+<% end %>
+
+</div>
 
 <div>
 <% if current_user.admin? %>

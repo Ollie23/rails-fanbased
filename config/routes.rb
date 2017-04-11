@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :teams, only: [:show, :create, :new, :edit, :update, :destroy]
 
   resources :teams do
-    resources :fans, only: [:create]
+    resources :fans, only: [:create, :destroy]
   end
 
   resources :leagues
