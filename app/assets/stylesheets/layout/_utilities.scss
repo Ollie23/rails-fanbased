@@ -85,22 +85,26 @@
     position: relative;
     margin: 13px;
     box-shadow: 3px 3px 5px grey;
-h3 {
+  h3 {
+    position: absolute;
+    top: -9px;
+    left: 13px;
+  }
+  p {
   position: absolute;
-  top: -9px;
-  left: 13px;
-}
-p {
-position: absolute;
-bottom: 3px;
-right: 9px;
-}
+  bottom: 3px;
+  right: 9px;
+  }
 }
 
 .margin {
   margin-top: 25px;
-
 }
 
+.avatar-left {
+      float: left;
+    width: 330px;
+    height: 290px;
+}
 
 
