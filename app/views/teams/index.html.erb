@@ -1,22 +1,22 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
+    <div class="col-xs-12 padded">
       <ul>
-        <% @teams.each do |team| %>
-        <li>
-        <% if team.is_supporter?(current_user) == false %>
-          <%= simple_form_for [team, @fan] do |f| %>
-          <%= f.input :team_id, as: :hidden, input_html: { value: team.id } %>
-          <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
-            <%= f.submit %>
+        <%  League.all.each do |league| %>
+        <%= league.name %>
+        <% sorted_teams = league.teams.sort_by &:name %>
+        <% sorted_teams.each do |team| %>
+          <% if team.is_supporter?(current_user) == false %>
+            <%= simple_form_for [team, @fan] do |f| %>
+            <%= f.input :team_id, as: :hidden, input_html: { value: team.id } %>
+            <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+              <%= f.submit team.name, class: "btn btn-primary" %>
           <% end %>
-           <p><%= team.name %></p>
-
-         <%else%>
+         <% else %>
             <p style="color: green;"><%= team.name %></p>
-        </li>
-        <%end%>
-       <%end%>
+        <% end %>
+       <% end %>
+        <% end %>
      </ul>
     </div>
     <%= link_to 'Finish', root_path%>
