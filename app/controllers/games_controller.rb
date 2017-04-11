@@ -1,6 +1,13 @@
 class GamesController < ApplicationController
+
   def index
-    @games = Game.all
+
+    # @sorted_games = sort_week
+    @games = Game.paginate(:page => params[:page], :per_page => 10)
+
+    # @sorted_games = Post.paginate(:page => params[:page])
+
+    # @games = Game.all.order('created_at DESC').group_by(&:date_time)
   end
 
   def show
@@ -28,6 +35,16 @@ class GamesController < ApplicationController
   def destroy
     @game = game.find(params[:id]).destroy
     redirect_to root_path
+  end
+
+  def sort_week
+    array = []
+    Game.all.each do |game|
+      if game.date_time > Date.today and game.date_time < Date.today + 7
+        array << game
+      end
+    array
+    end
   end
 
   private

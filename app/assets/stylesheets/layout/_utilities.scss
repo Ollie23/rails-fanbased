@@ -60,3 +60,24 @@
   align-content: end;
 }
 
+
+
+.card {
+    height: 175px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    background-size: cover !important;
+    color: white;
+    position: relative;
+    border-radius: 15px 50px;
+    position: relative;
+h3 {
+  position: absolute;
+  top: -9px;
+  left: 13px;
+}
+p {
+position: absolute;
+bottom: 3px;
+right: 9px;
+}
+}

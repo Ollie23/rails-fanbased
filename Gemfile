@@ -16,8 +16,13 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
+
+gem 'will_paginate', '~> 3.1.0'
+gem "geocoder"
+
 
 # gem "open-uri"
 gem "nokogiri"
@@ -25,6 +30,17 @@ gem "nokogiri"
 gem 'country_select'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
+gem "coffee-rails"
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
+
 
 
 

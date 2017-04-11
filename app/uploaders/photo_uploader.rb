@@ -2,9 +2,6 @@
 
 class PhotoUploader < CarrierWave::Uploader::Base
 
-  class PhotoUploader < CarrierWave::Uploader::Base
-    include Cloudinary::CarrierWave
-  end
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -51,5 +48,10 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+
+  class PhotoUploader < CarrierWave::Uploader::Base
+  include Cloudinary::CarrierWave
+  end
+>>
 
 end
