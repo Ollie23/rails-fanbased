@@ -34,7 +34,31 @@
 }
 
 
-// CARD VIEWS
+// Profile show
+
+.profile-card {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.profile-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-column li {
+  list-style: none;
+}
+
+.profile-div {
+  white-space: nowrap;
+}
+
+.profile-button {
+  display: flex;
+  align-content: end;
+}
 
 
 

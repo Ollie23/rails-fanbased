@@ -28,12 +28,13 @@
           <li>
             <%= event.game.home_team.name %> vs <%= event.game.away_team.name %>
             <% if current_user %>
-            <%= simple_form_for [event, @attendee] do |f| %>
-              <%= f.input :event_id, as: :hidden, input_html: { value: event.id } %>
-              <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
-            <%= f.submit %>
-              <% end %>
+              <%= simple_form_for [event, @attendee] do |f| %>
+                <%= f.input :event_id, as: :hidden, input_html: { value: event.id } %>
+                <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
+              <%= f.submit %>
             <% end %>
+          <% end %>
+
          </li>
         <% end %>
         <div id="map" style="width: 100%; height: 600px;"></div>

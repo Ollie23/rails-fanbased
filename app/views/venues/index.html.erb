@@ -27,9 +27,11 @@
 </div>
 
 <div>
-  <% if current_user && current_user.admin? %>
+
+<% if current_user && current_user.admin? %>
   <%= link_to 'New Venue', new_venue_path, class: 'btn btn-primary'%>
-  <% end %>
+<% end %>
+
 </div>
 
 

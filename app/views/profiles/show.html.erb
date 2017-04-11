@@ -1,30 +1,37 @@
-<div class="container">
+<div class="container profile-card">
   <div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
-      <div class="text-center">
+    <div class="col-xs-12 col-md-6 text-center">
+      <!-- <div class=""> -->
         <h3><%= @profile.first_name.capitalize + " " + @profile.last_name.capitalize %></h3>
         <p><%= @profile.username %></p>
         <p><%= @profile.age %></p>
       </div>
-      <div class="col-xs-6 padded">
+      <div class="col-xs-12 col-md-6 profile-column">
       <ul>
         <h4>Your teams</h4>
         <% @profile.user.team.each do |team| %>
           <%= link_to team_path(team) do %>
             <li> <%= team.name %> </li>
-          <%end%>
-        <%end%>
+          <% end %>
+          <%= link_to 'de', team_fan_path(team), method: :delete %>
+
+        <% end %>
       </ul>
       </div>
-      <div class="col-xs-6 padded">
+      <div class="col-xs-12 col-md-6 profile-column profile-div">
         <ul>
           <h4>Your Events</h4>
           <% @profile.user.events.each do |event| %>
                <%= link_to venue_path(event.venue) do %>
-               <%= event.game.home_team.name + " " + "V" + " " + event.game.away_team.name %>
+              <li> <%= event.game.home_team.name %> V <%= event.game.away_team.name %> </li>
               <% end %>
-          <%end%>
+          <% end %>
         </ul>
+      </div>
+      <div class = "col-xs-12 col-md-6 profile-button">
+        <%= link_to teams_path do %>
+        More Teams
+        <% end %>
       </div>
     </div>
   </div>
