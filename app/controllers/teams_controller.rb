@@ -41,9 +41,6 @@ class TeamsController < ApplicationController
     redirect_to root_path
   end
 
-  def destroy
-  end
-
   private
 
   def team_params

@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 20170410141600) do
     t.string   "abbreviation"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "photo"
   end
 
   create_table "users", force: :cascade do |t|
@@ -136,9 +137,10 @@ ActiveRecord::Schema.define(version: 20170410141600) do
     t.integer  "price_range"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "photo"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "photo"
+
   end
 
   add_foreign_key "attendees", "events"

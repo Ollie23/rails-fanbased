@@ -16,7 +16,6 @@
 </div>
   <div class="row">
 
-
       <% @venues.each do |venue| %>
       <%= link_to venue_path(venue) do %>
           <div class="col-xs-12 col-sm-4 col-md-4">
@@ -41,4 +40,17 @@
 
 
 
+<div>
 
+
+<% if current_user && current_user.admin? %>
+  <%= link_to 'New Venue', new_venue_path, class: 'btn btn-primary'%>
+<% end %>
+
+</div>
+
+<div>
+<% if current_user.admin? %>
+<%= link_to 'New Venue', new_venue_path, class: 'btn btn-primary'%>
+<% end %>
+</div>
