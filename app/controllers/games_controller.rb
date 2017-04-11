@@ -4,7 +4,7 @@ class GamesController < ApplicationController
 
     #@sorted_games = sort_week
     @games = Game.all
-    @games = @games.paginate(:page => params[:page], :per_page => 18).order("date_time ASC")
+    @games = future_games.paginate(:page => params[:page], :per_page => 18).order("date_time ASC")
 
     # @sorted_games = Post.paginate(:page => params[:page])
 
@@ -40,6 +40,10 @@ class GamesController < ApplicationController
 
   def sort_week
     Game.where("date_time >= ? AND date_time <= ?", Date.today.at_beginning_of_week, Date.today.end_of_week)
+  end
+
+  def future_games
+    Game.where("date_time >= ?", Date.today)
   end
 
   private
