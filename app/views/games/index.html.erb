@@ -1,14 +1,14 @@
 
 <div class="container padded">
   <div class="row">
-    <h1>This week</h1>
+    <h1>Upcoming Fixtures</h1>
       <ul>
       <div class= "text-center">
         <%= will_paginate @games %>
       </div>
           <% @games.each do |game| %>
             <div class="col-xs-12 col-sm-4 col-md-4">
-              <div class="game-card text-center">
+              <div class="game-card text-center  game-index">
                 <%= link_to game_path(game) do %>
                   <%=game.date_time%>
                   <br>
