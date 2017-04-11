@@ -22,14 +22,14 @@ class VenuesController < ApplicationController
     # if current_user.owns_bar?(Bar.find(params[:id]))
     @venue = Venue.find(params[:id])
     @attendee = Attendee.new
-      # @venue_coordinates = { lat: @venue.latitude, lng: @venue.longitude }
-      # @venue = Venue.where.not(latitude: nil, longitude: nil)
+    @alert_message = "You are viewing #{@venue.name}"
+    @venue_coordinates = { lat: @venue.latitude, lng: @venue.longitude }
+    @venues = Venue.where.not(latitude: nil, longitude: nil)
 
-      # @hash = Gmaps4rails.build_markers(@bar) do |venue, marker|
-      #   marker.lat bar.latitude
-      #   marker.lng bar.longitude
-        # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
-
+    @hash = Gmaps4rails.build_markers(@venue) do |venue, marker|
+      marker.lat venue.latitude
+      marker.lng venue.longitude
+    end
   end
 
       def edit
