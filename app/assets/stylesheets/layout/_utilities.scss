@@ -83,6 +83,8 @@
     position: relative;
     border-radius: 15px 50px;
     position: relative;
+    margin: 13px;
+    box-shadow: 3px 3px 5px grey;
 h3 {
   position: absolute;
   top: -9px;
@@ -94,3 +96,11 @@ bottom: 3px;
 right: 9px;
 }
 }
+
+.margin {
+  margin-top: 25px;
+
+}
+
+
+
