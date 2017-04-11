@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
@@ -13,4 +14,16 @@
     </div>
   </div>
 </div>
+
+
+<ul>
+<% @games.each do |game| %>
+<li>
+<%= game.home_team.name + " " + "V" + " " + game.away_team.name%>
+<%= game.date_time  %>
+</li>
+<% end %>
+</ul>
+
+
 

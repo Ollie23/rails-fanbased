@@ -20,7 +20,9 @@
         <ul>
           <h4>Your Events</h4>
           <% @profile.user.events.each do |event| %>
+               <%= link_to venue_path(event.venue) do %>
                <%= event.game.home_team.name + " " + "V" + " " + event.game.away_team.name %>
+              <% end %>
           <%end%>
         </ul>
       </div>
