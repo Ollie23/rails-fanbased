@@ -4,7 +4,6 @@
 
 <div class="container">
   <div class="row">
-
     <div class="col-xs-12 col-sm-6 col-md-3">
 
       <% @venues.each do |venue| %>
@@ -22,9 +21,11 @@
       <% end %>
       <% end %>
     </div>
+
   </div>
 
 </div>
+
 
 <div>
 
@@ -34,5 +35,8 @@
 
 </div>
 
-
-
+<div>
+<% if current_user.admin? %>
+<%= link_to 'New Venue', new_venue_path, class: 'btn btn-primary'%>
+<% end %>
+</div>
