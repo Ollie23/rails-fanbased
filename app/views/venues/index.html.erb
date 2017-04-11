@@ -1,36 +1,29 @@
-
-
-
-
-<div class="container">
-<div class="row">
-<div class="col-xs-2">
-<h1>Venues</h1>
-</div>
-<div class="col-xs-2">
-
-  <% if current_user && current_user.admin? %>
-  <%= link_to 'New Venue', new_venue_path, class: 'btn btn-primary margin'%>
-  <% end %>
-  </div>
-</div>
+<div class="container padded">
   <div class="row">
-
-      <% @venues.each do |venue| %>
+    <div class="col-xs-2">
+      <h1>Venues</h1>
+    </div>
+    <div class="col-xs-2">
+      <% if current_user && current_user.admin? %>
+        <%= link_to 'New Venue', new_venue_path, class: 'btn btn-primary margin'%>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <% @venues.each do |venue| %>
       <%= link_to venue_path(venue) do %>
-          <div class="col-xs-12 col-sm-4 col-md-4">
-
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= venue.photo %>);">
+        <div class="col-xs-12 col-sm-4 col-md-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= venue.photo %>);">
             <h3>
-            <%=venue.name%>
+              <%=venue.name%>
             </h3>
-          <p>
-            <%=venue.address%>
+            <p>
+              <%=venue.address%>
             <br>
-            Closing time: <%= venue.close.strftime('%H:%M') %>
-          </p>
-      </div>
+              Closing time: <%= venue.close.strftime('%H:%M') %>
+            </p>
           </div>
+        </div>
 
       <% end %>
       <% end %>
@@ -41,16 +34,3 @@
 
 
 <div>
-
-
-<% if current_user && current_user.admin? %>
-  <%= link_to 'New Venue', new_venue_path, class: 'btn btn-primary'%>
-<% end %>
-
-</div>
-
-<div>
-<% if current_user.admin? %>
-<%= link_to 'New Venue', new_venue_path, class: 'btn btn-primary'%>
-<% end %>
-</div>

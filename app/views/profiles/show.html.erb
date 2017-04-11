@@ -1,4 +1,4 @@
-<div class="container profile-card">
+<div class="container profile-card padded">
   <div class="row">
     <div class="col-xs-12 col-md-6 text-center">
       <!-- <div class=""> -->
@@ -6,14 +6,14 @@
         <p><%= @profile.username %></p>
         <p><%= @profile.age %></p>
       </div>
-      <div class="col-xs-12 col-md-6 profile-column">
+      <div class="col-xs-12 col-md-6 profile-column profile-div">
       <ul>
         <h4>Your teams</h4>
         <% @profile.user.team.each do |team| %>
           <%= link_to team_path(team) do %>
             <li> <%= team.name %> </li>
           <% end %>
-          <%= link_to 'de', team_fan_path(team), method: :delete %>
+          <%= link_to 'x', team_fan_path(team), method: :delete %>
 
         <% end %>
       </ul>
