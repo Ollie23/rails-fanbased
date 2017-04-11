@@ -3,7 +3,8 @@ class GamesController < ApplicationController
   def index
 
     #@sorted_games = sort_week
-    @games = sort_week.paginate(:page => params[:page], :per_page => 10).order("date_time ASC")
+    @games = Game.all
+    @games = @games.paginate(:page => params[:page], :per_page => 18).order("date_time ASC")
 
     # @sorted_games = Post.paginate(:page => params[:page])
 
@@ -38,16 +39,7 @@ class GamesController < ApplicationController
   end
 
   def sort_week
-
     Game.where("date_time >= ? AND date_time <= ?", Date.today.at_beginning_of_week, Date.today.end_of_week)
-
-    #array = []
-    #Game.all.each do |game|
-      #if game.date_time > Date.today and game.date_time < Date.today + 7
-      #  array << game
-     # end
-   # array
-  #  end
   end
 
   private
