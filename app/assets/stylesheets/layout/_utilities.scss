@@ -47,6 +47,7 @@
   color: #219945
 }
 
+
 .venues underl{
   text-decoration: underline;
   color: #219945;
@@ -128,3 +129,47 @@ right: 9px;
 
 
 
+
+.profile-card {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.profile-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-column li {
+  list-style: none;
+}
+
+.profile-div {
+  white-space: nowrap;
+}
+
+.profile-button {
+  display: flex;
+  align-content: end;
+}
+
+.card {
+    height: 175px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    background-size: cover !important;
+    color: white;
+    position: relative;
+    border-radius: 15px 50px;
+    position: relative;
+h3 {
+  position: absolute;
+  top: -9px;
+  left: 13px;
+}
+p {
+position: absolute;
+bottom: 3px;
+right: 9px;
+}
+}

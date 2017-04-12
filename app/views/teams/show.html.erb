@@ -1,11 +1,12 @@
+
 <div class="container padded">
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4 text-center">
-      <h2><%= @team.name %></h2>
       <% @team.games.each do |game| %>
       <p><%= game.league.name %> <%= game.date_time.strftime('%m/%d/%Y') %></p>
         <%= link_to game_path(game) do %>
           <li><%= game.home_team.name + " " + "VS" + " " + game.away_team.name %></li>
+          <hr>
         <% end %>
       <% end %>
     </div>

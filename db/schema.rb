@@ -140,6 +140,7 @@ ActiveRecord::Schema.define(version: 20170410141600) do
     t.string   "photo"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "photo"
   end
 
   add_foreign_key "attendees", "events"
