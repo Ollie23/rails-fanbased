@@ -39,7 +39,7 @@ namespace :scrape_games do
 
 
         unless team_01.empty? or team_02.empty?
-          Game.create!(date_time: new_date, league_id: premier_league.id, home_team_id: team_01.first.id, away_team_id: team_02.first.id)
+          Game.create!(date_time: new_date, league_id: premier_league.id, home_team_id: team_01.first.id, away_team_id: team_02.first.id, kickoff: time)
         end
       end
     end

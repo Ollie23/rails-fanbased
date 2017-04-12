@@ -5,11 +5,13 @@ class Venue < ApplicationRecord
   validates :address, presence: true
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+  mount_uploader :photo, PhotoUploader
 
 
   def owns_venue?(logged_user)
     current_user == logged_user
   end
+
 
   mount_uploader :photo, PhotoUploader
 

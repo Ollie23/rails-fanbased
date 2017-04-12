@@ -1,19 +1,21 @@
-
-<% if current_user.owns_profile?(@profile) %>
-<h1 class="text-center">Edit Profile</h1>
- <div class="container">
-    <div class="row">
-      <div class="col-xs-4 col-xs-offset-4">
-        <%= simple_form_for @profile do |f| %>
-            <%= f.input :username %>
-            <%= f.input :first_name %>
-            <%= f.input :last_name %>
-            <%= f.input :age %>
-            <%= f.submit %>
-        <% end %>
+<div class="padded">
+  <% if current_user.owns_profile?(@profile) %>
+  <h1 class="text-center">Edit Profile</h1>
+   <div class="container">
+      <div class="row">
+        <div class="col-xs-4 col-xs-offset-4">
+          <%= simple_form_for @profile do |f| %>
+              <%= f.input :username %>
+              <%= f.input :first_name %>
+              <%= f.input :last_name %>
+              <%= f.input :age %>
+              <%= f.input :photo %>
+              <%= f.input :photo_cache, as: :hidden %>
+              <%= f.submit %>
+          <% end %>
+      </div>
     </div>
   </div>
-</div>
   <% else %>
-
 <% end %>
+</div>

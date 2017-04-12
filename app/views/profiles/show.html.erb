@@ -1,20 +1,25 @@
+
 <div class="container profile-card padded">
   <div class="row">
     <div class="col-xs-12 col-md-6 text-center">
       <!-- <div class=""> -->
-        <img src="user.jpg" alt="user" class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @profile.photo %>);">
+
+        <img src=<%= @profile.photo %> alt="user" class="avatar-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @profile.photo %>);">
 
         <h3><%= @profile.first_name.capitalize + " " + @profile.last_name.capitalize %></h3>
         <p><%= @profile.username %></p>
         <p><%= @profile.age %></p>
       </div>
+
       <div class="col-xs-12 col-md-6 profile-column profile-div">
+
       <ul>
         <h4>Your teams</h4>
         <% @profile.user.team.each do |team| %>
           <%= link_to team_path(team) do %>
             <li> <%= team.name %> </li>
           <% end %>
+
           <%= link_to 'x', team_fan_path(team), method: :delete %>
 
         <% end %>
@@ -38,4 +43,4 @@
       </div>
     </div>
   </div>
-</div>
+

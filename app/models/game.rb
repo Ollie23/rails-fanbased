@@ -7,5 +7,4 @@ class Game < ApplicationRecord
   has_many :venues, through: :events
   has_many :events
 
-
 end

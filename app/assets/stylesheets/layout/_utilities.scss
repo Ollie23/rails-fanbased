@@ -37,17 +37,23 @@
 }
 
 .about img{
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
 }
 .venues{
   background-color: #333333;
   color: white;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .venues strong{
   color: #219945
+}
+
+
+.venues underl{
+  text-decoration: underline;
+  color: #219945;
 }
 
 // Profile show
@@ -77,7 +83,6 @@
 }
 
 
-
 .card {
     height: 175px;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
@@ -102,7 +107,15 @@ right: 9px;
 
 .margin {
   margin-top: 25px;
+}
 
+.game-card {
+  height: 50px;
+  position: relative;
+  border-radius: 12px;
+  margin: 3px;
+  box-shadow: 3px 3px 5px grey;
+  text-decoration: none;
 }
 
 .image-venue {
@@ -126,6 +139,17 @@ right: 9px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+.indexgame {
+  color: white;
+  text-decoration: none;
+}
+
+.map-home {
+  background-color: white;
+  color: #333333;
+  padding-bottom: 10px;
+
 }
 
 .header-info {
