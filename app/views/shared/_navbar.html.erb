@@ -1,7 +1,7 @@
 <div class="navbar-wagon navbar-wagon-fixed">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
+ <%= image_tag "logo.png" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -19,14 +19,15 @@
       <p class="navbar-wagon-item navbar-wagon-link">Venues</p>
     <% end %>
 
-
-
-
     <% if user_signed_in? %>
-      <%= link_to profile_path(current_user.profile) do %>
-        <p class="navbar-wagon-item navbar-wagon-link">Profile</p>
-      <% end %>
-    <% end %>
+          <%= link_to profile_path(current_user.profile) do %>
+            <p class="navbar-wagon-item navbar-wagon-link">Profile</p>
+          <% end %>
+        <% end %>
+
+
+
+
 
 
 

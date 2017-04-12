@@ -1,6 +1,14 @@
 <div class="container padded">
   <div class="row">
     <h1>Upcoming Fixtures</h1>
+    <%= link_to games_path do %>
+        <%= "All" %>
+        <% end %>
+      <% League.all.each do |league| %>
+        <%= link_to league_path(league) do %>
+        <%= league.name %>
+        <% end %>
+      <% end %>
       <div class= "text-center">
         <%= will_paginate @games %>
       </div>
@@ -16,6 +24,7 @@
               </div>
             </div>
           <% end %>
+
     </div>
   </div>
 

@@ -27,6 +27,10 @@
         <% @venue.events.each do |event| %>
           <li style="list-style: none;">
           <%= event.attendees.count %>
+          <% event.supporters.each_with_index do |x, i| %>
+            <%= x %>
+          <% end %>
+
             <% if current_user %>
               <%= simple_form_for [event, @attendee] do |f| %>
                 <%= f.input :event_id, as: :hidden, input_html: { value: event.id } %>

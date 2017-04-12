@@ -8,4 +8,19 @@ class Event < ApplicationRecord
     self.users.pluck(:id).include?(user.id) ? true : false
   end
 
+
+  def supporters
+    attending_users = (self.attendees.map {|a| a.user})
+    home_team = 0
+    away_team = 0
+    attending_users.each do |user|
+      if user.team.include?(self.game.home_team)
+        home_team += 1
+      elsif user.team.include?(self.game.away_team)
+        away_team += 1
+      end
+      @array = [home: home_team, away: away_team]
+    end
+  end
+
 end

@@ -3,7 +3,8 @@ class GamesController < ApplicationController
   def index
 
     #@sorted_games = sort_week
-    @games = Game.all
+
+
     @games = future_games.paginate(:page => params[:page], :per_page => 18).order("date_time ASC")
 
     # @sorted_games = Post.paginate(:page => params[:page])
