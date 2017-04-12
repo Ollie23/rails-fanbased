@@ -2,7 +2,7 @@
   <div class="row">
       <%  League.all.each do |league| %>
           <div class="col-xs-12 col-md-4">
-          <div class="team-pad">
+          <div class="league-name">
           <%= league.name %>
           </div>
         <% sorted_teams = league.teams.sort_by &:name %>
