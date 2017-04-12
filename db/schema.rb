@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410141600) do
+ActiveRecord::Schema.define(version: 20170412085822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20170410141600) do
     t.datetime "updated_at",   null: false
     t.integer  "home_team_id"
     t.integer  "away_team_id"
+    t.time     "kickoff"
     t.index ["away_team_id"], name: "index_games_on_away_team_id", using: :btree
     t.index ["home_team_id"], name: "index_games_on_home_team_id", using: :btree
     t.index ["league_id"], name: "index_games_on_league_id", using: :btree
@@ -94,6 +95,7 @@ ActiveRecord::Schema.define(version: 20170410141600) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "photo"
     t.index ["user_id"], name: "index_profiles_on_user_id", using: :btree
   end
 
@@ -137,9 +139,9 @@ ActiveRecord::Schema.define(version: 20170410141600) do
     t.integer  "price_range"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "photo"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "photo"
   end
 
   add_foreign_key "attendees", "events"
