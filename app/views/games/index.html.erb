@@ -1,19 +1,25 @@
 
- <h1>This week</h1>
-<div class="container">
+
+<div class="container padded">
   <div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
-    <h1>This week</h1>
+    <h1>Upcoming Fixtures</h1>
       <ul>
-        <% @games.each do |game| %>
-          <p> <%=game.date_time%></p>
-          <p> <%= game.home_team.name +  " vs " + game.away_team.name %> </p>
-          <hr>
-        <%end%>
+      <div class= "text-center">
         <%= will_paginate @games %>
+      </div>
+          <% @games.each do |game| %>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+              <div class="game-card text-center  game-index">
+                <%= link_to game_path(game) do %>
+                  <%=game.date_time%>
+                  <br>
+                  <p> <%= game.home_team.name +  " vs " + game.away_team.name %> </p>
+              <% end %>
+              </div>
+            </div>
+          <% end %>
       </ul>
     </div>
   </div>
-</div>
 
 

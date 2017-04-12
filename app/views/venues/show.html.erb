@@ -1,4 +1,4 @@
-<div class= "text-center">
+<div class= "text-center padded">
   <h1><%= @venue.name %></h1>
   <h3><%= @venue.rating %></h3>
 </div>
@@ -60,11 +60,4 @@
     });
   <% end %>
 <% end %>
-<% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).ready(function() {
-     var coord = <%= raw @venue_coordinates.to_json %>;
-      alert('<%= j @alert_message %>');
-    });
-  <% end %>
-<%end%>
+
