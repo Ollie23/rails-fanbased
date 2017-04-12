@@ -24,6 +24,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem "geocoder"
 
 
+
 # gem "open-uri"
 gem "nokogiri"
 
@@ -41,6 +42,10 @@ end
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 
+
+group :development do
+  gem 'rails_real_favicon'
+end
 
 
 

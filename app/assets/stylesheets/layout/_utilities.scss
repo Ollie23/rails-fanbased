@@ -31,6 +31,9 @@
 
 .Site-content {
   flex: 1;
+  #myownid {
+    background-color: gray,
+  }
 }
 
 .about img{
@@ -46,6 +49,7 @@
 .venues strong{
   color: #219945
 }
+
 
 .venues underl{
   text-decoration: underline;
@@ -79,7 +83,6 @@
 }
 
 
-
 .card {
     height: 175px;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
@@ -102,34 +105,145 @@
   }
 }
 
+.user-card{
+    height: 400px;
+    width: 300px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    background-position: center;
+    background-size: cover !important;
+    color: white;
+    position: relative;
+    box-shadow: 3px 3px 5px grey;
+    border: 10px solid green;
+
+}
+
+.user-card p{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: green;
+  font-size: 50px;
+  background-color: #333333;
+  border-radius:50%;
+}
+
+.user-data{
+  background-color: #333333;
+  width: 300px;
+  position: absolute;
+  bottom: -10px;
+  color: white;
+  font-size: 15px;
+  left: -10px;
+  border-top-right-radius: 300px;
+  border: 10px solid green;
+
+}
 .margin {
   margin-top: 25px;
 }
 
 .game-card {
   height: 50px;
-  // text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   position: relative;
   border-radius: 12px;
   margin: 3px;
   box-shadow: 3px 3px 5px grey;
   text-decoration: none;
+  font-size: 10px;
+}
+.game-card h3{
+  padding-left: 10px;
 }
 
 .map-home {
   background-color: white;
   color: #333333;
+
+
+.image-venue {
+  background-size: cover !important;
+  border-radius: 5px;
+  position: relative;
+  float: left;
+  margin: 5px;
+  height: 150px;
+  width: 240px;
+
 }
 
-.game-index {
-  text-decoration: none;
-  color: black;
+.wrappper-venue {
+  width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 100px 20px;
 }
+
+
+.user-data {
+  .subheader {
+    font-style: italic;
+    font-size: 20px;
+  }
+h3 {
+text-align: center;
+}
+}
+
+.profile-card {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+
+.venue-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+
+.indexgame {
+  color: white;
+  text-decoration: none;
+}
+
 
 .avatar-left {
       float: left;
     width: 330px;
     height: 290px;
+  }
+.map-home {
+  background-color: white;
+  color: #333333;
+  padding-bottom: 10px;
+
+}
+
+.header-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.venue-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px;
+}
+
+.venue-events {
+  display: flex;
+  justify-content: space-between;
+}
+.wrappper-background {
+  background-color: #E3E5E5;
 }
 
 
+a:hover {
+  text-decoration: none;
+}

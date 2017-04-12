@@ -25,7 +25,6 @@ class VenuesController < ApplicationController
     @alert_message = "You are viewing #{@venue.name}"
     @venue_coordinates = { lat: @venue.latitude, lng: @venue.longitude }
     @venues = Venue.where.not(latitude: nil, longitude: nil)
-
     @hash = Gmaps4rails.build_markers(@venue) do |venue, marker|
       marker.lat venue.latitude
       marker.lng venue.longitude
@@ -39,6 +38,7 @@ class VenuesController < ApplicationController
       def update
         @venue = Venue.find(params[:id])
         @venue.update(venue_params)
+        @venue.save
         redirect_to venues_path(@venue)
       end
 

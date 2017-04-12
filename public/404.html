@@ -1,67 +1,83 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Football</title>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="5+nhtm/T0UKIourVZ5jphdoB50tPRtj6EsQYfeT6FtPr22YpOl+znbcKe12/MyKn/wyqfIb9+/1peEmhCsomjg==" />
+    <meta name="action-cable-url" content="/cable" />
+    <link rel="stylesheet" media="all" href="/assets/application.css" />
+  </head>
 
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
 
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  <body class="Site">
 
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    <div class="navbar-wagon navbar-wagon-fixed">
+  <a class="navbar-wagon-brand" href="/">
+    <img src="/assets/logo.png" alt="Logo" />
+</a>
 
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
-</head>
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-<body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
+    <a href="/">
+      <p class="navbar-wagon-item navbar-wagon-link">Home</p>
+</a>
+    <a href="/games">
+      <p class="navbar-wagon-item navbar-wagon-link">Calendar</p>
+</a>
+    <a href="/venues">
+      <p class="navbar-wagon-item navbar-wagon-link">Venues</p>
+</a>
+
+
+
+
+
+
+     <p> <a class="navbar-wagon-item navbar-wagon-link" href="/users/sign_in">Login</a> </p>
+     <p> <a class="navbar-wagon-item navbar-wagon-link navbar-wagon-button" href="/users/sign_up">Sign Up</a> </p>
+
+
+
+
   </div>
-</body>
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><a href="#">Some mobile link</a></li>
+        <li><a href="#">Other one</a></li>
+        <li><a href="#">Other one</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,168,68,0.6) 0%, rgba(0,61,36,0.6) 50%), url('/assets/404.jpg');">
+      <div class="banner-content">
+        <h1>404: Page not found</h1>
+      </div>
+    </div>
+
+
+<div id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4">
+        <ul class="list-inline">
+          <li><a href=""><i class="fa fa-youtube"></i></a></li>
+          <li><a href=""><i class="fa fa-instagram"></i></a></li>
+          <li><a href=""><i class="fa fa-facebook"></i></a></li>
+          <li><a href=""><i class="fa fa-twitter"></i></a></li>
+        </ul>
+      </div>
+      <div class="col-xs-8 text-right">
+        <p>Bars and more bars.</p>
+      </div>
+    </div>
+  </div>
+</div>
+  </body>
 </html>

@@ -1,23 +1,30 @@
-
 <div class="container padded">
   <div class="row">
     <h1>Upcoming Fixtures</h1>
-      <ul>
+    <%= link_to games_path do %>
+        <%= "All" %>
+        <% end %>
+      <% League.all.each do |league| %>
+        <%= link_to league_path(league) do %>
+        <%= league.name %>
+        <% end %>
+      <% end %>
       <div class= "text-center">
         <%= will_paginate @games %>
       </div>
           <% @games.each do |game| %>
             <div class="col-xs-12 col-sm-4 col-md-4">
-              <div class="game-card text-center  game-index">
-                <%= link_to game_path(game) do %>
-                  <%=game.date_time%>
+              <div class="game-card text-center" style="background: #333333;">
+                <%= link_to game_path(game), class: 'indexgame' do %>
+                  <span class=''>  <%=game.date_time%>
                   <br>
-                  <p> <%= game.home_team.name +  " vs " + game.away_team.name %> </p>
+                  <%= game.home_team.name +  " vs " + game.away_team.name %>
+                  </span>
               <% end %>
               </div>
             </div>
           <% end %>
-      </ul>
+
     </div>
   </div>
 

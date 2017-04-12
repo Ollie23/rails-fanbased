@@ -1,11 +1,27 @@
-<h1 class="text-center padded"> <%= @game.home_team.name + " " + "V" + " " + @game.away_team.name %> </h1>
+<div class="text-center padded">
+  <p><%=@game.gameweek%></p>
+<!--   <p>Week: 21</p>
+ -->  <h1> <%= @game.home_team.name + " " + "V" + " " + @game.away_team.name %> </h1>
+<!--   <h3>8:45</h3>
+ -->  <p><%=@game.kickoff%></p>
+</div>
 <div class="container">
   <div class="row">
-    <div class="col-xs-4 col-xs-offset-4">
-      <% @game.venues.each do |bar|%>
-        <%=link_to venue_path(bar) do%>
-          <%= bar.name %>
-        <%end%>
+      <% @game.venues.each do |venue|%>
+        <%= link_to venue_path(venue) do %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= venue.photo %>);">
+            <h3>
+              <%=venue.name%>
+            </h3>
+            <p>
+              <%=venue.address%>
+            <br>
+              Closing time: <%= venue.close.strftime('%H:%M') %>
+            </p>
+          </div>
+        </div>
+      <% end %>
       <% end %>
     </div>
   </div>
