@@ -50,8 +50,8 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # end
 
   class PhotoUploader < CarrierWave::Uploader::Base
-  include Cloudinary::CarrierWave
+    include Cloudinary::CarrierWave
   end
->>
+
 
 end

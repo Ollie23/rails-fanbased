@@ -1,29 +1,19 @@
 
+ <h1>This week</h1>
 <div class="container">
   <div class="row">
     <div class="col-xs-4 col-xs-offset-4">
+    <h1>This week</h1>
       <ul>
-      <h1>This week</h1>
-        <%= will_paginate @games %>
-           <% @games.each do |game| %>
-              <p> <%= game.home_team.name +  " vs " + game.away_team.name %> </p>
-              <p> <%=game.date_time%></p>
-          <%end%>
+        <% @games.each do |game| %>
+          <p> <%=game.date_time%></p>
+          <p> <%= game.home_team.name +  " vs " + game.away_team.name %> </p>
+          <hr>
+        <%end%>
         <%= will_paginate @games %>
       </ul>
     </div>
   </div>
 </div>
-
-
-
-<ul>
-<% @games.each do |game| %>
-<li>
-<%= game.home_team.name + " " + "V" + " " + game.away_team.name%>
-<%= game.date_time  %>
-</li>
-<% end %>
-</ul>
 
 
