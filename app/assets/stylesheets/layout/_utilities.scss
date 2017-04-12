@@ -31,6 +31,9 @@
 
 .Site-content {
   flex: 1;
+  #myownid {
+    background-color: gray,
+  }
 }
 
 .about img{
@@ -102,5 +105,44 @@ right: 9px;
 
 }
 
+.image-venue {
+  background-size: cover !important;
+  border-radius: 5px;
+  position: relative;
+  float: left;
+  margin: 5px;
+  height: 150px;
+  width: 240px;
+}
 
+.wrappper-venue {
+  width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 100px 20px;
+}
 
+.venue-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.venue-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px;
+}
+
+.venue-events {
+  display: flex;
+  justify-content: space-between;
+}
+.wrappper-background {
+  background-color: #E3E5E5;
+}
