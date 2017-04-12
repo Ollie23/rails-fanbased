@@ -141,7 +141,6 @@ ActiveRecord::Schema.define(version: 20170412085822) do
     t.datetime "updated_at",  null: false
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "photo"
   end
 
   add_foreign_key "attendees", "events"
