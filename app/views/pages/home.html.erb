@@ -1,6 +1,7 @@
+
     <section class="hero">
 
-    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,168,68,0.6) 0%, rgba(0,61,36,0.6) 50%), url('<%= image_path('background.jpeg') %>');">
+    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,168,68,0.6) 0%, rgba(0,61,36,0.6) 50%), url('<%= image_path('home-banner.jpeg') %>');">
       <div class="banner-content">
         <h1>FanBased</h1>
         <p>Meet likeminded fans wherever you are</p>
@@ -11,52 +12,53 @@
     <section class="content">
       <div class="text-center">
         <% if current_user %>
-        <ul style="list-style: none;">
-          <h3>Your Teams</h3>
-          <% current_user.team.each do |team| %>
-          <%= link_to team_path(team) do %>
-          <h3><li> <%= team.name %> </li></h3>
+          <ul style="list-style: none;">
+          <h3> Next Games To Watch Out For! </h3>
+            <% @arr.each do |key, games| %>
+            <h4>
+               <%= key %>
+            </h4>
+            <%= games.first.date_time.strftime('%m/%d/%Y') %>
+              <%= games.first.home_team.name +  " vs " + games.first.away_team.name %>
           <% end %>
-          <% end %>
-        </ul>
-        <% else %>
-        <div class="container padded text-center">
-          <div class="row">
-            <div class="about">
-              <div class="col-xs-12 col-sm-4 ">
-                <%= image_tag("soccer-icon.png")%>
-                <p>something cleaver about football</p>
-
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <%= image_tag("t-shirt-icon.png")%>
-                <p>something cleaver about watching the game with people from the same team</p>
-              </div>
-              <div class="col-xs-12 col-sm-4">
-                <%= image_tag("trophy-icon.png")%>
-                <p>Something cleaver about everything</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          </ul>
         <% end %>
       </div>
 
 
 
       <div class="venues">
-        <div class="container padded text-center">
+        <div class="container text-center">
           <div class="row">
+            <div class="about">
+                <div class="col-xs-12 col-sm-4 ">
+                  <%= image_tag("soccer-icon.png")%>
+                  <p>Find a <strong>Match</strong></p>
+
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <%= image_tag("t-shirt-icon.png")%>
+                  <p>Locate a <strong>Venue</strong></p>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                  <%= image_tag("trophy-icon.png")%>
+                  <p>Pick and choose depending on where <strong>your team's fans</strong> are going to be</p>
+                </div>
+              </div>
             <div class="col-xs-12 col-sm-12 ">
-              <h2>More than <strong> 30000 VENUES</strong> with the best enviroment for you to enjoy the game just like in the stadium and more shit tha is going to be good trust me.</h2>
+              <h2> <underl> No more weekends sat in the corner of the pub without a view of the game. </underl> Easily find great sporting venues, likeminded fans and a stadium-like atmosphere wherever you are </h2>
             </div>
           </div>
         </div>
       </div>
 
-
-  <div class="map">
-    <div id="map" style="width: 100%; height: 600px;"></div>
+  <div class="map-home">
+  <div class="container text-center">
+    <h3>Our Venues!</h3>
+  <div class="map map-center">
+    <div id="map" style="width: 80%; height: 500px; background: black;"></div>
+  </div>
+  </div>
   </div>
 
 
@@ -80,7 +82,6 @@ handler.getMap().setZoom(14);
 });
 <% end %>
 <% end %>
-
 
 
 

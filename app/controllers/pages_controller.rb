@@ -9,5 +9,13 @@ class PagesController < ApplicationController
       marker.lat venue.latitude
       marker.lng venue.longitude
     end
+
+    # change team to teams, readability!
+    if current_user
+    @arr = {}
+    current_user.team.each_with_index do |team, index|
+      @arr[team.name] =  team.games.select { |game| game.date_time >= Date.today }
+    end
+  end
   end
 end
