@@ -5,6 +5,7 @@ class LeaguesController < ApplicationController
 
   def show
     @league = League.find(params[:id])
+    @league = future_games.paginate(:page => params[:page], :per_page => 18).order("date_time ASC")
   end
   def new
     @league = League.new
@@ -36,6 +37,10 @@ class LeaguesController < ApplicationController
 
    def league_params
     params.require(:league).permit(:name, :country)
+  end
+
+  def future_games
+    Game.where("date_time >= ? AND league_id = ?", Date.today, "#{@league.id}")
   end
 end
 

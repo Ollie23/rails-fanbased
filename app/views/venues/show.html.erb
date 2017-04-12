@@ -33,6 +33,20 @@
       <div class="venue-events">
         <h3> Your events !</h3>
         <% @venue.events.each do |event| %>
+
+          <li style="list-style: none;">
+          <%= event.attendees.count %>
+          <% event.supporters.each_with_index do |x, i| %>
+            <%= x %>
+          <% end %>
+
+            <% if current_user %>
+              <%= simple_form_for [event, @attendee] do |f| %>
+                <%= f.input :event_id, as: :hidden, input_html: { value: event.id } %>
+                <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
+              <%= f.submit event.game.home_team.name + " vs " + event.game.away_team.name %>
+            <% end %>
+
         <li>
           <%= event.game.home_team.name %> vs <%= event.game.away_team.name %>
           <% if current_user %>
@@ -41,6 +55,7 @@
           <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
           <%= f.submit %>
           <% end %>
+
           <% end %>
 
         </li>
@@ -81,4 +96,3 @@ handler.getMap().setZoom(14);
 });
 <% end %>
 <% end %>
-
