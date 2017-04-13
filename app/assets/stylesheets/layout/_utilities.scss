@@ -47,13 +47,19 @@
   padding-top: 50px;
   padding-bottom: 50px;
 }
+.home-strip{
+  background-color: #333333;
+  color: white;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 
-.venues strong{
+.home-strip strong{
   color: #219945
 }
 
 
-.venues underl{
+.home-strip underl{
   text-decoration: underline;
   color: #219945;
 }
@@ -110,39 +116,43 @@
 }
 
 
-.user-card{
-  height: 400px;
-  width: 300px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-  background-position: center;
-  background-size: cover !important;
-  color: white;
-  position: relative;
-  box-shadow: 3px 3px 5px grey;
-  border: 10px solid green;
+
+.user-card {
+    height: 400px;
+    width: 300px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    background-position: center;
+    background-size: cover !important;
+    color: white;
+    position: relative;
+    box-shadow: 3px 3px 5px grey;
+    border: 6px solid #219945;
+    border-radius: 6px;
 }
 
-.user-card p{
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: green;
-  font-size: 50px;
-  background-color: #333333;
-  border-radius:50%;
+.user-card p {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 60px;
+    color: #219945;
+    font-size: 40px;
+    background-color: #333333;
+    border-radius: 50%;
 }
 
-.user-data{
-  background-color: #333333;
-  width: 300px;
-  position: absolute;
-  bottom: -10px;
-  color: white;
-  font-size: 15px;
-  left: -10px;
-  border-top-right-radius: 300px;
-  border: 10px solid green;
-
+.user-data {
+    background-color: #333333;
+    width: 295px;
+    position: absolute;
+    bottom: -3px;
+    color: white;
+    font-size: 15px;
+    left: -5px;
+    border-top-right-radius: 300px;
+    border-bottom-right-radius: 5px;
+    border: 5px solid #219945;
+    border-bottom-left-radius: 5px;
 }
 
 .margin {
@@ -216,6 +226,12 @@
 .indexgame {
   color: white;
   text-decoration: none;
+span{
+  font-size: 15px;
+}
+span:hover{
+  color: #219945;
+}
 }
 
 
@@ -347,14 +363,20 @@ a:hover {
 
 .add-teams a {
   color: white;
-  padding-bottom: 100px;
+}
+
+.tabs a {
+  color :#333333;
+
 }
 
 .active {
-  color: red;
+color: #219945;
 }
 
-
+.active :hover {
+color: #219945;
+}
 
 .your-teams{
   background-color:#333333;
@@ -367,7 +389,11 @@ a:hover {
   color:#219945;
 }
 .your-teams i{
-  color: red;
+color: #219945;
+font-weight: 30%;
 }
-
+.your-teams i:hover{
+color: red;
+font-weight: 30%;
+}
 

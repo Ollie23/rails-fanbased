@@ -1,15 +1,17 @@
-<div class="container padded">
+<div class="container">
   <div class="row">
-
     <div class="tabs">
       <% @leagues.each_with_index do |league, index| %>
+      <div class = "teams-tabs">
       <% if index == 0 %>
         <a class="tab active" data-target="#league-<%= league.id %>">
       <% else %>
         <a class="tab" data-target="#league-<%= league.id %>">
       <% end %>
-        <%= league.name %>
+        <h3><%= league.name %></h3>
       </a>
+      </a>
+      </div>
       <% end %>
     </div>
 
@@ -52,3 +54,6 @@
      <h2><%= link_to 'Finish', root_path%><h2>
      </div>
    </div>
+<br>
+<br>
+
