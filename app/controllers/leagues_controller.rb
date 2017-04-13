@@ -5,7 +5,7 @@ class LeaguesController < ApplicationController
 
   def show
     @league = League.find(params[:id])
-    @league = future_games.paginate(:page => params[:page], :per_page => 18).order("date_time ASC")
+    @league_game = future_games.paginate(:page => params[:page], :per_page => 18).order("date_time ASC")
   end
   def new
     @league = League.new
