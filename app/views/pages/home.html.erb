@@ -6,6 +6,11 @@
       <div class="banner-content">
         <h1>FanBased</h1>
         <p>Meet likeminded fans wherever you are</p>
+      <% if current_user %>
+        <%= link_to profile_path(current_user.profile) do %>
+      <p class="btn">Profile</p>
+      <% end %>
+      <% end %>
       </div>
     </div>
 </section>
