@@ -3,27 +3,32 @@ require "nokogiri"
 
 namespace :scrape_spanish do
 
-  def liga_teams(liga_id)
-      # Game.destroy_all
-      # Competition.destroy_all
-      # Team.destroy_all
-      team = Nokogiri::HTML(open('http://www.goal.com/en/tables/primera-division/7'))
-      team.search('.short').each_with_index do |element, index|
-        teamname = element.search('.team.short').each_with_index do |el, index|
-          name_team = el.search('a').text.strip
-          unless name_team.empty?
-            liga_team = Team.create!(name: name_team, location: "Spain")
-            Competition.create!(team_id: liga_team.id, league_id: liga_id)
-            puts "fuck diego"
-          end
-        end
+  def get_info(attributes)
+    Game.destroy_all
+    Competition.destroy_all
+    Team.destroy_all
+    team = Nokogiri::HTML(open(attributes[:url]))
+    team.search('.short tbody tr').each_with_index do |element, index|
+      name = element.at_css('.team.short a').text.strip
+      if name.nil?
+        return
+      else
+        puts "Found #{name}"
+      end
+      picture = element.at_css('.flag img').attribute('src')
+      puts "Found picture for #{name} - #{picture}" unless picture.nil?
+      unless name.empty?
+        team = Team.create!(name: name, location: attributes[:country])
+        Competition.create!(team_id: team.id, league_id: attributes[:id])
+        puts "fuck diego"
       end
     end
+  end
 
   task liga: :environment do
     # Game.destroy_all
     la_liga = League.create(name: "La Liga", country: "Spain")
-    liga_teams(la_liga.id)
+    get_info(id: la_liga.id, country: "Spain", url: "http://www.goal.com/en/tables/primera-division/7")
 
     league = Nokogiri::HTML(open('http://www.goal.com/en/fixtures/primera-division/7'))
     league.search('.match-table').each_with_index do |element, index|
@@ -45,6 +50,6 @@ namespace :scrape_spanish do
     end
   end
 
-  end
+end
 
 
