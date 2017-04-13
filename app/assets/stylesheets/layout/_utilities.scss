@@ -262,9 +262,9 @@
 
 .venue-features {
   .fa {
-  display: inline-block;
-  margin-right: 10px;
-  width: 20px;
+    display: inline-block;
+    margin-right: 10px;
+    width: 20px;
   }
 }
 
@@ -294,7 +294,13 @@
 
 .venue-events {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  li {
+    margin-top:20px;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .wrappper-background {
   background-color: #E3E5E5;
@@ -351,17 +357,17 @@ a:hover {
 
 
 .your-teams{
-background-color:#333333;
+  background-color:#333333;
 }
 .your-teams h2{
-color:white;
+  color:white;
 }
 .your-teams p{
-font-size: 20px;
-color:#219945;
+  font-size: 20px;
+  color:#219945;
 }
 .your-teams i{
-color: red;
+  color: red;
 }
 
 

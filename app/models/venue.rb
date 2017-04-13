@@ -1,6 +1,7 @@
 class Venue < ApplicationRecord
   has_many :games, through: :events
   has_many :events
+  has_many :attendees, through: :events
   validates :name, presence: true
   validates :address, presence: true
   geocoded_by :address
