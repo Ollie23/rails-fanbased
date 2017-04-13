@@ -40,12 +40,14 @@
   width: 150px;
   height: 150px;
 }
+
 .venues{
   background-color: #333333;
   color: white;
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
 .venues strong{
   color: #219945
 }
@@ -118,7 +120,6 @@
   position: relative;
   box-shadow: 3px 3px 5px grey;
   border: 10px solid green;
-
 }
 
 .user-card p{
@@ -143,6 +144,7 @@
   border: 10px solid green;
 
 }
+
 .margin {
   margin-top: 25px;
 }
@@ -163,7 +165,7 @@
 .map-home {
   background-color: white;
   color: #333333;
-
+}
 
 .image-venue {
   background-size: cover !important;
