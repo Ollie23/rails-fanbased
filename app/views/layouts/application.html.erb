@@ -11,12 +11,14 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
+ <%= favicon_link_tag %>
   </head>
         <body class="Site">
 
+    <%= render 'application/favicon' %>
     <%= render 'shared/navbar' %>
 
-    <main class="Site-content">
+    <main class="Site-content" style="padding-top: 70px;">
       <%= yield %>
     </main>
     <%= render 'shared/footer' %>

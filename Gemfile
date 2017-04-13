@@ -43,6 +43,10 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 
 
+group :development do
+  gem 'rails_real_favicon'
+end
+
 
 
 group :development, :test do

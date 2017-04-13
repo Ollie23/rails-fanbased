@@ -1,5 +1,6 @@
 <div class="container padded">
   <div class="row">
+
     <div class="tabs">
       <% @leagues.each_with_index do |league, index| %>
       <% if index == 0 %>
@@ -21,6 +22,7 @@
       <div class="col-xs-12 col-md-12">
         <div class="team-pad">
           <h1><%= league.name %><h1>
+
           </div>
           <div class="row">
             <% sorted_teams = league.teams.sort_by &:name %>

@@ -31,6 +31,9 @@
 
 .Site-content {
   flex: 1;
+  #myownid {
+    background-color: gray,
+  }
 }
 
 .about img{
@@ -80,8 +83,8 @@
 }
 
 
-
 .card {
+
   height: 175px;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   background-size: cover !important;
@@ -91,15 +94,17 @@
   position: relative;
   margin: 13px;
   box-shadow: 3px 3px 5px grey;
+}
   h3 {
     position: absolute;
     top: -9px;
     left: 13px;
   }
-  p {
+
     position: absolute;
     bottom: 3px;
     right: 9px;
+
   }
 }
 
@@ -144,7 +149,6 @@
 
 .game-card {
   height: 50px;
-  // text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   position: relative;
   border-radius: 12px;
   margin: 3px;
@@ -155,15 +159,30 @@
 .game-card h3{
   padding-left: 10px;
 }
+
 .map-home {
   background-color: white;
   color: #333333;
+
+
+.image-venue {
+  background-size: cover !important;
+  border-radius: 5px;
+  position: relative;
+  float: left;
+  margin: 5px;
+  height: 150px;
+  width: 240px;
+
 }
 
-.game-index {
-  text-decoration: none;
-  color: black;
+.wrappper-venue {
+  width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 100px 20px;
 }
+
 
 .user-data {
   .subheader {
@@ -181,23 +200,38 @@
   flex-direction: row;
 }
 
-.profile-column {
+
+.venue-information {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+
 }
 
-.profile-column li {
-  list-style: none;
+
+.indexgame {
+  color: white;
+  text-decoration: none;
 }
 
-.profile-div {
-  white-space: nowrap;
+
+.avatar-left {
+      float: left;
+    width: 330px;
+    height: 290px;
+  }
+.map-home {
+  background-color: white;
+  color: #333333;
+  padding-bottom: 10px;
+
 }
 
-.profile-button {
+.header-info {
   display: flex;
-  align-content: end;
+  justify-content: space-between;
 }
+
 
 .card {
   height: 175px;
@@ -217,6 +251,20 @@
     bottom: 3px;
     right: 9px;
   }
+  
+.venue-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px;
+}
+
+.venue-events {
+  display: flex;
+  justify-content: space-between;
+}
+.wrappper-background {
+  background-color: #E3E5E5;
+
 }
 
 
