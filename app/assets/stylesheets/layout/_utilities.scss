@@ -111,6 +111,7 @@
 // }
 
 
+
 .user-card {
     height: 400px;
     width: 300px;
@@ -322,14 +323,19 @@ a:hover {
 
 .add-teams a {
   color: white;
-  padding-bottom: 100px;
+}
+
+.tabs a {
+  color :#333333;
 }
 
 .active {
-color: red;
+color: #219945;
 }
 
-
+.active :hover {
+color: #219945;
+}
 
 .your-teams{
 background-color:#333333;
@@ -342,7 +348,11 @@ font-size: 20px;
 color:#219945;
 }
 .your-teams i{
-color: red;
+color: #219945;
+font-weight: 30%;
 }
-
+.your-teams i:hover{
+color: red;
+font-weight: 30%;
+}
 
