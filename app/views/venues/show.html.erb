@@ -49,48 +49,55 @@
       <div class="venue-events">
         <h3> Your events !</h3>
         <% @venue.events.each do |event| %>
-        <li>
+
+
+          <%= event.attendees.count %>
+          <% event.supporters.each do |team, count| %>
+          <h1>
+            Of <%= team %> we have <%=  count.to_s %> attending fans!
+          </h1>
+          <% end %>
+
           <% if current_user %>
           <%= simple_form_for [event, @attendee] do |f| %>
           <%= f.input :event_id, as: :hidden, input_html: { value: event.id } %>
           <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
-          <%= f.submit  event.game.home_team.name + " vs " +  event.game.away_team.name %>
+          <%= f.submit event.game.home_team.name + " vs " + event.game.away_team.name %>
+          <% end %>
           <% end %>
           <% end %>
 
-        </li>
-        <% end %>
-      </div>
-      <div class="venue-actions">
-        <% if current_user && current_user.admin? %>
-        <%= link_to 'Edit venue', edit_venue_path(@venue), class: 'btn btn-primary'%>
-        <%= link_to "Delete Bar", venue_path(@venue), method: :delete, class: 'btn btn-primary'%>
-        <%= link_to "Add Events", new_venue_event_path(@venue), class: "btn btn-primary" %>
-        <% end %>
-      </div>
-    </div>
+        </div>
+        <div class="venue-actions">
+          <% if current_user && current_user.admin? %>
+          <%= link_to 'Edit venue', edit_venue_path(@venue), class: 'btn btn-primary'%>
+          <%= link_to "Delete Bar", venue_path(@venue), method: :delete, class: 'btn btn-primary'%>
+          <%= link_to "Add Events", new_venue_event_path(@venue), class: "btn btn-primary" %>
+          <% end %>
+        </div>
 
-    <div class="venue-map">
-      <div id="map" style="width: 100%; height: 600px;"></div>
+
+
+        <div class="venue-map">
+          <div id="map" style="width: 100%; height: 600px;"></div>
+        </div>
+      </div>
     </div>
-  </div>
 </div>
 
 
-
-
-<% content_for(:after_js) do %>
-<%= javascript_tag do %>
-$(document).ready(function() {
-var handler = Gmaps.build('Google');
-handler.buildMap({ internal: { id: 'map' } }, function() {
-markers = handler.addMarkers(<%= raw @hash.to_json %>);
-handler.bounds.extendWith(markers);
-handler.fitMapToBounds();
-if (markers.length == 0) {
-handler.getMap().setZoom(2);
-} else if (markers.length == 1) {
-handler.getMap().setZoom(14);
+    <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+    $(document).ready(function() {
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: { id: 'map' } }, function() {
+    markers = handler.addMarkers(<%= raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    if (markers.length == 0) {
+    handler.getMap().setZoom(2);
+  } else if (markers.length == 1) {
+  handler.getMap().setZoom(14);
 }
 });
 });

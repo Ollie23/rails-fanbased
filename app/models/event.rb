@@ -19,8 +19,9 @@ class Event < ApplicationRecord
       elsif user.team.include?(self.game.away_team)
         away_team += 1
       end
-      @array = [home: home_team, away: away_team]
     end
+     @array = {self.game.home_team.name => home_team,
+                self.game.away_team.name => away_team}
   end
 
 end
