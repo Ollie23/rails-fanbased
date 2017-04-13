@@ -6,9 +6,9 @@
         <%= "All" %>
         <% end %>
       <div class= "text-center">
-        <%= will_paginate @league %>
+        <%= will_paginate @league_game %>
       </div>
-          <% @league.each do |game| %>
+          <% @league_game.each do |game| %>
             <div class="col-xs-12 col-sm-4 col-md-4">
               <div class="game-card text-center" style="background: #333333;">
                 <%= link_to game_path(game), class: 'indexgame' do %>
