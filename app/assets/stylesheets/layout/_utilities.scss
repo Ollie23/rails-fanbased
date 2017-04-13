@@ -40,12 +40,14 @@
   width: 150px;
   height: 150px;
 }
+
 .venues{
   background-color: #333333;
   color: white;
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
 .venues strong{
   color: #219945
 }
@@ -106,16 +108,15 @@
 }
 
 .user-card{
-    height: 400px;
-    width: 300px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-    background-position: center;
-    background-size: cover !important;
-    color: white;
-    position: relative;
-    box-shadow: 3px 3px 5px grey;
-    border: 10px solid green;
-
+  height: 400px;
+  width: 300px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  background-position: center;
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  box-shadow: 3px 3px 5px grey;
+  border: 10px solid green;
 }
 
 .user-card p{
@@ -140,6 +141,7 @@
   border: 10px solid green;
 
 }
+
 .margin {
   margin-top: 25px;
 }
@@ -160,7 +162,7 @@
 .map-home {
   background-color: white;
   color: #333333;
-
+}
 
 .image-venue {
   background-size: cover !important;
