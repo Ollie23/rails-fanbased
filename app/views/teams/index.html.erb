@@ -1,25 +1,52 @@
 <div class="container padded">
   <div class="row">
-      <%  League.all.each do |league| %>
-          <div class="col-xs-12 col-md-4">
-          <div class="team-pad">
-          <%= league.name %>
+    <div class="tabs">
+      <% @leagues.each_with_index do |league, index| %>
+      <% if index == 0 %>
+        <a class="tab active" data-target="#league-<%= league.id %>">
+      <% else %>
+        <a class="tab" data-target="#league-<%= league.id %>">
+      <% end %>
+        <%= league.name %>
+      </a>
+      <% end %>
+    </div>
+
+    <%  @leagues.each_with_index do |league, index| %>
+    <% if index == 0 %>
+    <div class="tab-content" id="league-<%= league.id %>">
+      <% else %>
+    <div class="tab-content hidden" id="league-<%= league.id %>">
+    <% end %>
+      <div class="col-xs-12 col-md-12">
+        <div class="team-pad">
+          <h1><%= league.name %><h1>
           </div>
-        <% sorted_teams = league.teams.sort_by &:name %>
-        <% sorted_teams.each do |team| %>
-          <% if team.is_supporter?(current_user) == false %>
-            <%= simple_form_for [team, @fan] do |f| %>
+          <div class="row">
+            <% sorted_teams = league.teams.sort_by &:name %>
+            <% sorted_teams.each do |team| %>
+            <div class="col-md-4">
+              <% if team.is_supporter?(current_user) == false %>
+              <%= simple_form_for [team, @fan] do |f| %>
               <%= f.input :team_id, as: :hidden, input_html: { value: team.id } %>
               <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
-              <%= f.submit team.name, class: "btn btn-primary" %>
+              <%= f.submit "Join #{team.name}", class: "button-team" %>
+              <hr>
+              <% end %>
+              <% else %>
+              <a class="button-team-selected">You're a fan of <%= team.name %></a>
+              <hr>
+              <% end %>
+            </div>
             <% end %>
-          <% else %>
-            <p style="color: green; text-decoration: bold;"><%= team.name %></p>
-          <% end %>
-        <% end %>
-    </div>
+          </div>
+        </div>
+      </div>
       <% end %>
+    </div>
   </div>
-</div>
-
-<%= link_to 'Finish', root_path%>
+  <div class= "text-center">
+    <div class="btn btn-success add-teams">
+     <h2><%= link_to 'Finish', root_path%><h2>
+     </div>
+   </div>

@@ -2,6 +2,7 @@ class TeamsController < ApplicationController
   def index
     @teams = Team.all
     @fan = Fan.new
+    @leagues = League.all
   end
   def show
     @team = Team.find(params[:id])
