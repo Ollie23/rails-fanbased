@@ -97,18 +97,13 @@
   margin: 13px;
   box-shadow: 3px 3px 5px grey;
 }
-  h3 {
-    position: absolute;
-    top: -9px;
-    left: 13px;
-  }
 
-    position: absolute;
-    bottom: 3px;
-    right: 9px;
-
-  }
+h3 {
+  position: absolute;
+  top: -9px;
+  left: 13px;
 }
+
 
 .user-card{
   height: 400px;
@@ -243,17 +238,20 @@
   position: relative;
   border-radius: 15px 50px;
   position: relative;
+
   h3 {
     position: absolute;
     top: -9px;
     left: 13px;
   }
+
   p {
     position: absolute;
     bottom: 3px;
     right: 9px;
   }
-  
+}
+
 .venue-actions {
   display: flex;
   justify-content: flex-start;
