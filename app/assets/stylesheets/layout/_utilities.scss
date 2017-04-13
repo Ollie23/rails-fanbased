@@ -86,24 +86,27 @@
 
 
 .card {
-    height: 175px;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
-    background-size: cover !important;
-    color: white;
-    position: relative;
-    border-radius: 15px 50px;
-    position: relative;
-    margin: 13px;
-    box-shadow: 3px 3px 5px grey;
+
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  border-radius: 15px 50px;
+  position: relative;
+  margin: 13px;
+  box-shadow: 3px 3px 5px grey;
+}
   h3 {
     position: absolute;
     top: -9px;
     left: 13px;
   }
-  p {
-  position: absolute;
-  bottom: 3px;
-  right: 9px;
+
+    position: absolute;
+    bottom: 3px;
+    right: 9px;
+
   }
 }
 
@@ -188,9 +191,9 @@
     font-style: italic;
     font-size: 20px;
   }
-h3 {
-text-align: center;
-}
+  h3 {
+    text-align: center;
+  }
 }
 
 .profile-card {
@@ -231,6 +234,26 @@ text-align: center;
   justify-content: space-between;
 }
 
+
+.card {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  border-radius: 15px 50px;
+  position: relative;
+  h3 {
+    position: absolute;
+    top: -9px;
+    left: 13px;
+  }
+  p {
+    position: absolute;
+    bottom: 3px;
+    right: 9px;
+  }
+  
 .venue-actions {
   display: flex;
   justify-content: flex-start;
@@ -243,9 +266,46 @@ text-align: center;
 }
 .wrappper-background {
   background-color: #E3E5E5;
+
 }
 
 
 a:hover {
   text-decoration: none;
+}
+
+
+.button-team{
+  height: 40px;
+  background-color: #4d4d7d;
+  border: none;
+  padding: 7px;
+  color: white;
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px rgba(1,1,1,0.8);
+  display:block;
+  transform: scale(1);
+  transition: transform 200ms ease, box-shadow 300ms ease;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 2px 8px rgba(1,1,1,0.3);
+  }
+}
+
+.button-team-selected {
+  height: 40px;
+  background-color: green;
+  border: none;
+  padding: 7px;
+  color: white;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.add-teams a {
+  color: white;
+}
+
+.active {
+color: red;
 }
