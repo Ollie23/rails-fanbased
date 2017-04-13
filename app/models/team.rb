@@ -7,6 +7,7 @@ class Team < ApplicationRecord
 
   validates :name, presence: true
   validates :location, presence: true
+  mount_uploader :photo, PhotoUploader
 
   def is_supporter?(team)
     self.users.pluck(:id).include?(team.id) ? true : false
