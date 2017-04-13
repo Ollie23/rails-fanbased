@@ -1,11 +1,17 @@
+
 <%= cl_image_tag(@team.photo) %>
-<div class="container padded">
+
+
+<div class="container">
   <div class="row">
+  <div class="text-center">
+  <h1><%= @team.name %></h1>
+  </div>
     <div class="col-xs-4 col-xs-offset-4 text-center">
       <% @team.games.each do |game| %>
       <p><%= game.league.name %> <%= game.date_time.strftime('%m/%d/%Y') %></p>
         <%= link_to game_path(game) do %>
-          <li><%= game.home_team.name + " " + "VS" + " " + game.away_team.name %></li>
+          <h4><%= game.home_team.name + " " + "VS" + " " + game.away_team.name %></h4>
           <hr>
         <% end %>
       <% end %>

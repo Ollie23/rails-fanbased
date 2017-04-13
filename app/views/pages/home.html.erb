@@ -14,13 +14,17 @@
       <div class="text-center">
         <% if current_user %>
           <ul style="list-style: none;">
-          <h3> Next Games To Watch Out For! </h3>
+          <h2> Next Games To Watch Out For! </h2>
             <% @arr.each do |key, games| %>
-            <h4>
-               <%= key %>
-            </h4>
+            <h3>
+              <%= key %>
+            </h3>
             <%= games.first.date_time.strftime('%m/%d/%Y') %>
+            <div class="home-team">
+            <%= link_to game_path(games) do %>
               <%= games.first.home_team.name +  " vs " + games.first.away_team.name %>
+            <% end %>
+            </div>
           <% end %>
           </ul>
         <% end %>
