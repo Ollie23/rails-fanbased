@@ -3,27 +3,34 @@ require "nokogiri"
 
 namespace :scrape_dutch do
 
-  def eredivisie_teams(eredivisie_id)
-      # Game.destroy_all
-      # Competition.destroy_all
-      # Team.destroy_all
-      team = Nokogiri::HTML(open('http://www.goal.com/en/tables/eredivisie/1'))
-      team.search('.short').each_with_index do |element, index|
-        teamname = element.search('.team.short').each_with_index do |el, index|
-          name_team = el.search('a').text.strip
-          unless name_team.empty?
-            eredivisie_team = Team.create!(name: name_team, location: "Netherlands")
-            Competition.create!(team_id: eredivisie_team.id, league_id: eredivisie_id)
-            puts "fuck diego"
-          end
-        end
+
+  def get_info(attributes)
+    Game.destroy_all
+    Competition.destroy_all
+    Team.destroy_all
+    team = Nokogiri::HTML(open(attributes[:url]))
+    team.search('.short tbody tr').each_with_index do |element, index|
+      name = element.at_css('.team.short a').text.strip
+      if name.nil?
+        return
+      else
+        puts "Found #{name}"
+      end
+      picture = element.at_css('.flag img').attribute('src')
+      puts "Found picture for #{name} - #{picture}" unless picture.nil?
+      unless name.empty?
+        team = Team.create!(name: name, location: attributes[:country])
+        Competition.create!(team_id: team.id, league_id: attributes[:id])
+        puts "fuck diego"
       end
     end
+  end
+
 
   task eredivisie: :environment do
     # Game.destroy_all
     eredivisie = League.create(name: "Eredivisie", country: "Netherlands")
-    eredivisie_teams(eredivisie.id)
+    get_info(id: eredivisie.id, country: "Netherlands", url: "http://www.goal.com/en/tables/eredivisie/1")
 
     league = Nokogiri::HTML(open('http://www.goal.com/en/fixtures/eredivisie/1'))
     league.search('.match-table').each_with_index do |element, index|
@@ -45,6 +52,6 @@ namespace :scrape_dutch do
     end
   end
 
-  end
+end
 
 
