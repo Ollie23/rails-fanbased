@@ -10,12 +10,15 @@
             <%= @venue.name %>
           </h2>
           <h3>
+          <% unless @venue.rating.nil? %>
+
             <% @venue.rating.times do %>
             <i class="fa fa-star"></i>
             <% end %>
             <% (5 - @venue.rating).times do %>
             <i class="fa fa-star-o"></i>
             <% end %>
+          <% end %>
           </h3>
         </div>
       </div>
