@@ -29,15 +29,23 @@
           <div class="row">
             <% sorted_teams = league.teams.sort_by &:name %>
             <% sorted_teams.each do |team| %>
-            <div class="col-md-4">
+            <div class="col-md-4 text-center">
               <% if team.is_supporter?(current_user) == false %>
-              <%= simple_form_for [team, @fan] do |f| %>
-              <%= f.input :team_id, as: :hidden, input_html: { value: team.id } %>
-              <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
-              <%= f.submit "#{team.name}", class: "button-team" %>
-              <hr>
-              <% end %>
+
+                <%= simple_form_for [team, @fan] do |f| %>
+                  <%= f.input :team_id, as: :hidden, input_html: { value: team.id } %>
+                  <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+                  <div class="team-choose">
+                  <%= cl_image_tag team.photo %>
+                  </div>
+                  <%= f.submit "Join #{team.name}", class: "button-team" %>
+                  <hr>
+                  <% end %>
+
               <% else %>
+                <div class="team-choose">
+                <%= cl_image_tag team.photo %>
+                </div>
               <a class="button-team-selected">You're a fan of <%= team.name %></a>
               <hr>
               <% end %>

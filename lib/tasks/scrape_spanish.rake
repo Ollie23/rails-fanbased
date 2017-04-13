@@ -4,9 +4,6 @@ require "nokogiri"
 namespace :scrape_spanish do
 
   def get_info(attributes)
-    Game.destroy_all
-    Competition.destroy_all
-    Team.destroy_all
     team = Nokogiri::HTML(open(attributes[:url]))
     team.search('.short tbody tr').each_with_index do |element, index|
       name = element.at_css('.team.short a').text.strip
@@ -18,7 +15,7 @@ namespace :scrape_spanish do
       picture = element.at_css('.flag img').attribute('src')
       puts "Found picture for #{name} - #{picture}" unless picture.nil?
       unless name.empty?
-        team = Team.create!(name: name, location: attributes[:country])
+        team = Team.create!(name: name, location: attributes[:country], remote_photo_url: picture)
         Competition.create!(team_id: team.id, league_id: attributes[:id])
         puts "fuck diego"
       end
@@ -26,7 +23,6 @@ namespace :scrape_spanish do
   end
 
   task liga: :environment do
-    # Game.destroy_all
     la_liga = League.create(name: "La Liga", country: "Spain")
     get_info(id: la_liga.id, country: "Spain", url: "http://www.goal.com/en/tables/primera-division/7")
 
