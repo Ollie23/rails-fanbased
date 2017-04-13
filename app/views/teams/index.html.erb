@@ -34,7 +34,7 @@
               <%= simple_form_for [team, @fan] do |f| %>
               <%= f.input :team_id, as: :hidden, input_html: { value: team.id } %>
               <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
-              <%= f.submit "Join #{team.name}", class: "button-team" %>
+              <%= f.submit "#{team.name}", class: "button-team" %>
               <hr>
               <% end %>
               <% else %>
@@ -49,6 +49,8 @@
       <% end %>
     </div>
   </div>
+  <br>
+  <br>
   <div class= "text-center">
     <div class="btn btn-success add-teams">
      <h2><%= link_to 'Finish', root_path%><h2>
