@@ -2,7 +2,9 @@
 <div class="container profile-card padded text-center">
   <div class="row">
     <div class="col-xs-12 col-md-6">
+
       <div class="user-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path(@profile.photo )%>);">
+
         <p><%=@profile.age%></p>
         <div class= "user-data">
           <h3><%=@profile.first_name + " " + @profile.last_name%></h3>
@@ -13,27 +15,32 @@
   </div>
 </div>
 
-
-<div class="container">
-  <div class="row">
-  <h2 class="text-center">Your teams</h2>
-      <% @profile.user.team.each do |team| %>
-      <div class="col-xs-12 col-sm-4 text-center">
-        <%= link_to team_path(team) do %>
-          <p> <%= team.name %> </p>
-          <h4><%= link_to 'x', team_fan_path(team), method: :delete %></h4>
-        <% end %>
+<div class="your-teams">
+  <div class="container">
+    <div class="row">
+      <h2 class="text-center">Your teams</h2>
+        <% @profile.user.team.each do |team| %>
+        <div class="col-xs-12 col-sm-4 text-center">
+          <%= link_to team_path(team) do %>
+            <p> <%= team.name %> </p>
+            <%= link_to team_fan_path(team), method: :delete do%>
+              <i class="fa fa-window-close" aria-hidden="true"></i>
+            <%end%>
+          <% end %>
         </div>
       <% end %>
     </div>
   </div>
+  <br>
+  <div class= "text-center">
+    <div class="btn btn-success add-teams">
+      <%= link_to teams_path do %>More Teams<% end %>
+    </div>
+  </div>
+  <br>
 </div>
 
-<div class= "text-center">
-  <div class="btn btn-success add-teams">
-    <%= link_to teams_path do %>More Teams<% end %>
-  </div>
-</div>
+
 
 <div class="text-center padded">
   <h4>Your Events</h4>

@@ -98,11 +98,11 @@
   box-shadow: 3px 3px 5px grey;
 }
 
-h3 {
-  position: absolute;
-  top: -9px;
-  left: 13px;
-}
+// h3 {
+//   position: absolute;
+//   top: -9px;
+//   left: 13px;
+// }
 
 
 .user-card{
@@ -213,7 +213,7 @@ h3 {
 
 
 .avatar-left {
-      float: left;
+    float: left;
     width: 330px;
     height: 290px;
   }
@@ -275,7 +275,7 @@ a:hover {
 
 .button-team{
   height: 40px;
-  background-color: #4d4d7d;
+  background-color: #333333;
   border: none;
   padding: 7px;
   color: white;
@@ -298,12 +298,36 @@ a:hover {
   color: white;
   border-radius: 2px;
   display: inline-block;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 2px 8px rgba(1,1,1,0.3);
+    color:white
+  }
 }
 
 .add-teams a {
   color: white;
+  padding-bottom: 100px;
 }
 
 .active {
 color: red;
 }
+
+
+
+.your-teams{
+background-color:#333333;
+}
+.your-teams h2{
+color:white;
+}
+.your-teams p{
+font-size: 20px;
+color:#219945;
+}
+.your-teams i{
+color: red;
+}
+
+
