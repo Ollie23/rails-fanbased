@@ -1,8 +1,11 @@
 class AttendeesController < ApplicationController
   def create
+
+
     @attendee = Attendee.new(att_params)
      @attendee.save!
-    redirect_to root_path
+     @event = Event.find(@attendee.event_id)
+    redirect_to venue_path(@event.venue_id)
   end
 
   private

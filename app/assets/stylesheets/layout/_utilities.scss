@@ -37,8 +37,8 @@
 }
 
 .about img{
-  width: 150px;
-  height: 150px;
+  width: 105px;
+  height: 105px;
 }
 
 .venues{
@@ -50,8 +50,8 @@
 .home-strip{
   background-color: #333333;
   color: white;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 25px;
+  padding-bottom: 15px;
 }
 
 .home-strip strong{
@@ -320,7 +320,7 @@ span:hover{
 }
 .wrappper-background {
   background-color: #E3E5E5;
-
+  padding: -5px;
 }
 
 
@@ -404,9 +404,17 @@ font-weight: 30%;
 
 
 .home-team a{
-  color: black;
+  color: #333333;
 }
 .home-team a:hover{
   color: #219945;
 }
+
+.game-team {
+  color: #333333;
+  &:hover{
+  color: #219945;
+}
+}
+
 

@@ -6,11 +6,6 @@
       <div class="banner-content">
         <h1>FanBased</h1>
         <p>Meet likeminded fans wherever you are</p>
-      <% if current_user %>
-        <%= link_to profile_path(current_user.profile) do %>
-      <p class="btn">Profile</p>
-      <% end %>
-      <% end %>
       </div>
     </div>
 </section>
@@ -25,6 +20,7 @@
               <%= key %>
             </h3>
             <%= games.first.date_time.strftime('%m/%d/%Y') %>
+            <%= games.first.kickoff.strftime('%H:%M')%>
             <div class="home-team">
             <%= link_to game_path(games) do %>
               <%= games.first.home_team.name +  " vs " + games.first.away_team.name %>
@@ -42,16 +38,16 @@
           <div class="row">
             <div class="about">
                 <div class="col-xs-12 col-sm-4 ">
-                  <%= image_tag("soccer-icon.png")%>
+                  <%= image_tag("soccer-ball-variant.png")%>
                   <p>Find a <strong>Match</strong></p>
 
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                  <%= image_tag("t-shirt-icon.png")%>
+                  <%= image_tag("house-outline.png")%>
                   <p>Locate a <strong>Venue</strong></p>
                 </div>
                 <div class="col-xs-12 col-sm-4">
-                  <%= image_tag("trophy-icon.png")%>
+                  <%= image_tag("football-player-setting-ball.png")%>
                   <p>Pick and choose depending on where <strong>your team's fans</strong> are going to be</p>
                 </div>
               </div>
