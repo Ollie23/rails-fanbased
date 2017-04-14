@@ -3,8 +3,10 @@
   padding: 30px 0;
   color: #CCCCCC;
 }
-#footer p {
+#footer h4 {
   margin-top: 17px;
+  font-family: "Raleway", sans-serif;
+  color: #219945;
 }
 #footer ul {
   margin-top: 10px;
@@ -16,7 +18,7 @@
   transition: color 0.5s ease;
 }
 #footer a:hover{
-  color: #da552f;
+  color: #219945;
 }
 
 

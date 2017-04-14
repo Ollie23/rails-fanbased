@@ -40,6 +40,9 @@
                 <% end %>
               </li>
               <li>
+                <i class="fa fa-users"></i> <%= @venue.attendees.count %>
+              </li>
+              <li>
                 <i class="fa fa-map-marker"></i> <%= @venue.address %>
               </li>
               <li>
@@ -50,7 +53,7 @@
         </div>
       </div>
       <div class="venue-events">
-        <h3> Your events !<%= @venue.attendees.count %></h3>
+        <h3> Your events !</h3>
 
 <ul class="list-unstyled">
         <% @venue.events.each do |event| %>
@@ -64,7 +67,7 @@
           <%= simple_form_for [event, @attendee] do |f| %>
           <%= f.input :event_id, as: :hidden, input_html: { value: event.id } %>
           <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
-          <%= f.submit "Join #{event.game.home_team.name} vs #{event.game.away_team.name}", class: "btn btn-grey" %>
+          <%= f.submit "Join #{event.game.home_team.name} vs #{event.game.away_team.name}", class: "btn btn-success" %>
           <% end %>
           <% end %>
 <%= value %> attendees

@@ -1,9 +1,7 @@
 <div class="text-center padded">
-  <p><%=@game.gameweek%></p>
-<!--   <p>Week: 21</p>
- -->  <h1> <%= @game.home_team.name + " " + "V" + " " + @game.away_team.name %> </h1>
-<!--   <h3>8:45</h3>
- -->  <p><%=@game.kickoff%></p>
+ <h1><%= @game.date_time.strftime('%d/%m/%Y') %></h1>
+ <h1> <%= @game.home_team.name + " " + "V" + " " + @game.away_team.name %> </h1>
+<h2><%=@game.kickoff.strftime('%H:%M')%></h2>
 </div>
 <div class="container">
   <div class="row">

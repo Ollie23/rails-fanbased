@@ -27,10 +27,13 @@
         <div class="col-xs-12 col-sm-4 text-center">
           <%= link_to team_path(team) do %>
             <p> <%= team.name %> </p>
+
+            <div class="team-choose">
+                <%= cl_image_tag team.photo %>
+                </div>
             <%= link_to team_fan_path(team), method: :delete do%>
               <i class="fa fa-window-close" aria-hidden="true"></i>
             <%end%>
-            <%= cl_image_tag team.photo %>
             <br>
           <% end %>
         </div>
