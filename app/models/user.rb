@@ -15,4 +15,8 @@ class User < ApplicationRecord
     profile.id == self.profile.id
   end
 
+  def has_photo?
+    self.profile.photo.exists?
+  end
+
 end

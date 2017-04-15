@@ -5,7 +5,7 @@ class Event < ApplicationRecord
   has_many :attendees
 
   def is_attending?(user)
-    self.users.pluck(:id).include?(user.id) ? true : false
+    self.attendees.pluck(:user_id).include?(user.id) ? true : false
   end
 
 
@@ -23,5 +23,6 @@ class Event < ApplicationRecord
      @array = {self.game.home_team.name => home_team,
                 self.game.away_team.name => away_team}
   end
+
 
 end

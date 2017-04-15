@@ -63,7 +63,11 @@
 <% if index == 0 %>
 <%= value %> attendees
 <% else %>
-          <% if current_user %>
+          <% if event.is_attending?(current_user) %>
+         <div class="attend_event">
+          <%= "You're attending #{event.game.home_team.name} vs #{event.game.away_team.name}"%>
+         </div>
+          <% else %>
           <%= simple_form_for [event, @attendee] do |f| %>
           <%= f.input :event_id, as: :hidden, input_html: { value: event.id } %>
           <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
