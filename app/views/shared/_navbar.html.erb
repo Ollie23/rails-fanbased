@@ -108,6 +108,11 @@
                   <%= t(".games", default: "Calendar") %>
                 <% end %>
               </li>
+              <li>
+                <%= link_to venues_path do %>
+                  <%= t(".venues", default: "Venues") %>
+                <% end %>
+              </li>
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <%= t(".sign_out", default: "Log out") %>

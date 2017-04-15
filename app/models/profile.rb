@@ -4,6 +4,5 @@ class Profile < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   validates :username, :first_name, :last_name, presence: true, on: :update
 
-
 end
 
